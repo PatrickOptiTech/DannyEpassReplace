@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add PO Header</title>
+    <link rel="stylesheet" href="add-po.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <span>Add PO Header</span>
+            <div class="window-controls">
+                <button class="control-btn minimize">-</button>
+                <button class="control-btn maximize">□</button>
+                <button class="control-btn close">×</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active">Supplier</button>
+                <button class="tab">Ship To</button>
+                <button class="tab">Documents</button>
+                <button class="tab">Notepad</button>
+            </div>
+
+            <!-- Supplier Tab Content -->
+            <div class="tab-content" id="supplier-tab">
+                <div class="form-layout">
+                    <!-- Left Column -->
+                    <div class="left-column">
+                        <div class="form-row">
+                            <label>PO #</label>
+                            <div class="po-number">
+                                <input type="text" class="short-input">
+                                <input type="text" value="SYSTEM" readonly class="system-input">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Supplier</label>
+                            <input type="text" class="full-input">
+                        </div>
+
+                        <div class="form-row">
+                            <label>Serial Type</label>
+                            <select class="full-input">
+                                <option>ALL</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Min Order</label>
+                            <input type="text" value="0.00" class="amount-input right-align">
+                        </div>
+
+                        <div class="form-row">
+                            <label>Total Ordered</label>
+                            <input type="text" value="0.00" class="amount-input right-align" readonly>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Total Costed</label>
+                            <input type="text" value="0.00" class="amount-input right-align" readonly>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Supplier Note</label>
+                            <input type="text" class="full-input">
+                        </div>
+
+                        <div class="form-row">
+                            <label>Ship Via</label>
+                            <input type="text" class="full-input">
+                        </div>
+
+                        <!-- Confirmations Section -->
+                        <fieldset class="confirmations">
+                            <legend>Confirmations</legend>
+                            <div class="confirmation-row">
+                                <label>Confirmed</label>
+                                <input type="text" class="conf-input">
+                                <input type="text" value="00/00/00" class="date-input" readonly>
+                            </div>
+                            <div class="confirmation-row">
+                                <label>Authorized</label>
+                                <input type="text" class="conf-input">
+                                <input type="text" value="00/00/00" class="date-input" readonly>
+                            </div>
+                            <div class="confirmation-row">
+                                <label>Received</label>
+                                <input type="text" class="conf-input">
+                                <input type="text" value="00/00/00" class="date-input" readonly>
+                            </div>
+                            <div class="confirmation-row">
+                                <label>Paid</label>
+                                <input type="text" class="conf-input">
+                                <input type="text" value="00/00/00" class="date-input" readonly>
+                            </div>
+                        </fieldset>
+
+                        <!-- Location Section -->
+                        <div class="form-row">
+                            <label>Receive to Location Code</label>
+                            <input type="text" class="location-input">
+                        </div>
+
+                        <div class="form-row">
+                            <label>Receive to Location</label>
+                            <input type="text" class="full-input" readonly>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Floor Plan</label>
+                            <input type="text" class="full-input">
+                        </div>
+
+                        <div class="form-row">
+                            <label>Floor Plan Days</label>
+                            <input type="text" value="0" class="short-input right-align">
+                        </div>
+
+                        <div class="form-row">
+                            <label>Cost Factor</label>
+                            <input type="text" value="1.0000" class="short-input right-align">
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="right-column">
+                        <div class="form-row">
+                            <label>Buyer</label>
+                            <textarea class="buyer-notes" rows="10"></textarea>
+                        </div>
+
+                        <div class="checkboxes">
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                Allow BO Invoice to Attach
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                Released
+                            </label>
+                        </div>
+
+                        <!-- Dates Section -->
+                        <div class="dates-section">
+                            <div class="date-row">
+                                <label>Req Delivery</label>
+                                <input type="text" value="00/00/00" class="date-input">
+                            </div>
+                            <div class="date-row">
+                                <label>Effective</label>
+                                <input type="text" value="00/00/00" class="date-input">
+                            </div>
+                            <div class="date-row">
+                                <label>Started</label>
+                                <input type="text" value="8/15/2025" class="date-input" readonly>
+                            </div>
+                            <div class="date-row">
+                                <label>Ordered</label>
+                                <input type="text" value="00/00/00" class="date-input">
+                            </div>
+                            <div class="date-row">
+                                <label>Received</label>
+                                <input type="text" value="00/00/00" class="date-input">
+                            </div>
+                            <div class="date-row">
+                                <label>Costed</label>
+                                <input type="text" value="00/00/00" class="date-input">
+                            </div>
+                            <div class="date-row">
+                                <label>Finished</label>
+                                <input type="text" value="00/00/00" class="date-input">
+                            </div>
+                            <div class="date-row">
+                                <label>Created</label>
+                                <input type="text" value="8/15/2025" class="date-input" readonly>
+                            </div>
+                            <div class="date-row">
+                                <label>User</label>
+                                <input type="text" value="DS" class="date-input" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ship To Tab Content -->
+            <div class="tab-content" id="ship-to-tab">
+                <div class="ship-to-layout">
+                    <div class="left-side">
+                        <div class="form-row">
+                            <label>Ship To</label>
+                            <input type="text" class="ship-to-input">
+                        </div>
+
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="ship-to-type" checked>
+                                Supplier
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="ship-to-type">
+                                Customer
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="ship-to-type">
+                                Route
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="center-area">
+                        <textarea class="ship-to-details" rows="12"></textarea>
+                    </div>
+
+                    <div class="right-side">
+                        <button class="win95-btn">OK</button>
+                        <button class="win95-btn" id="btn-cancel-ship">Cancel</button>
+                        <button class="win95-btn">Detail</button>
+                    </div>
+
+                    <div class="bottom-area">
+                        <div class="form-row">
+                            <label>Ship To Note</label>
+                            <input type="text" class="ship-to-note">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents Tab Content -->
+            <div class="tab-content" id="documents-tab">
+                <div class="documents-layout">
+                    <p class="instructions">* To add files and links: Copy from File Explorer and Paste, or click Add.</p>
+
+                    <div class="documents-grid">
+                        <table class="documents-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Document</th>
+                                    <th>User</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Document rows will be added here -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="documents-actions">
+                        <div class="left-buttons">
+                            <button class="win95-btn">Show Document</button>
+                            <button class="win95-btn film-strip">Add</button>
+                            <button class="win95-btn">Edit</button>
+                            <button class="win95-btn">Delete</button>
+                        </div>
+
+                        <div class="right-controls">
+                            <div class="right-buttons">
+                                <button class="win95-btn">OK</button>
+                                <button class="win95-btn" id="btn-cancel-docs">Cancel</button>
+                                <button class="win95-btn">Detail</button>
+                            </div>
+
+                            <div class="view-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    Thumbnail
+                                </label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="view-size" checked>
+                                        Small
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="view-size">
+                                        Medium
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="view-size">
+                                        Large
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notepad Tab Content -->
+            <div class="tab-content active" id="notepad-tab">
+                <div class="notepad-layout">
+                    <div class="notes-grid">
+                        <table class="notes-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Note</th>
+                                    <th>User</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Note rows will be added here -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="notes-actions">
+                        <div class="action-buttons">
+                            <button class="win95-btn">Print</button>
+                            <button class="win95-btn">Review</button>
+                            <button class="win95-btn film-strip">Add</button>
+                            <button class="win95-btn">Edit</button>
+                            <button class="win95-btn">Delete</button>
+                        </div>
+
+                        <div class="right-buttons">
+                            <button class="win95-btn">OK</button>
+                            <button class="win95-btn" id="btn-cancel-notes">Cancel</button>
+                            <button class="win95-btn">Detail</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Buttons -->
+        <div class="bottom-buttons">
+            <button class="win95-btn">OK</button>
+            <button class="win95-btn" id="btn-cancel">Cancel</button>
+            <button class="win95-btn">Detail</button>
+        </div>
+    </div>
+
+    <script>
+        // Handle window control buttons
+        document.querySelector('.control-btn.close').addEventListener('click', () => {
+            window.close();
+        });
+
+        // Handle Cancel button
+        document.getElementById('btn-cancel').addEventListener('click', () => {
+            window.close();
+        });
+
+        // Handle tab switching
+        document.querySelectorAll('.tab').forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Show corresponding tab content
+                const tabContents = document.querySelectorAll('.tab-content');
+                if (tabContents[index]) {
+                    tabContents[index].classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

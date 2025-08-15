@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice Posting & Daily Sales Summary</title>
+    <link rel="stylesheet" href="invoice-posting.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="add-invoice-scripts/supabaseClient.js"></script>
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <span>Invoice Posting & Daily Sales Summary</span>
+            <div class="window-controls">
+                <button class="control-btn minimize">-</button>
+                <button class="control-btn maximize">□</button>
+                <button class="control-btn close">×</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="warning-section">
+                <div class="warning-title">WARNING !!!</div>
+                <div class="warning-text">
+                    This procedure will post all invoices for the selected Date range<br>
+                    and Branch.<br><br>
+                    During the posting process the following files will be updated:<br>
+                    <div class="indented-text">
+                        Customer History file<br>
+                        A/R Transactions file<br>
+                        Serial Sales History file
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-invoices-section">
+                <fieldset>
+                    <legend>Post Invoices</legend>
+                    
+                    <div class="form-row">
+                        <label>Finished from</label>
+                        <input type="text" class="date-input" id="dateFrom" placeholder="00/00/00">
+                    </div>
+
+                    <div class="form-row">
+                        <label>Finished up to and including Date</label>
+                        <input type="text" class="date-input" id="dateTo" value="8/15/2025">
+                    </div>
+
+                    <div class="form-row">
+                        <label>For Branch</label>
+                        <div class="input-with-button">
+                            <input type="text" id="branch" placeholder="*****">
+                            <button class="lookup-btn">...</button>
+                        </div>
+                        <span class="all-records">All Records</span>
+                    </div>
+
+                    <div class="form-row">
+                        <label>For User Finished</label>
+                        <div class="input-with-button">
+                            <input type="text" id="userFinished" placeholder="*****">
+                            <button class="lookup-btn">...</button>
+                        </div>
+                        <span class="all-records">All Records</span>
+                    </div>
+
+                    <div class="form-row">
+                        <label>For User Created Payment</label>
+                        <div class="input-with-button">
+                            <input type="text" id="userCreated" placeholder="*****">
+                            <button class="lookup-btn">...</button>
+                        </div>
+                        <span class="all-records">All Records</span>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="preview-section">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="previewOnly" checked>
+                    <span class="checkbox-text">Preview Posting Only</span>
+                </label>
+            </div>
+
+            <div class="button-bar">
+                <button class="win95-btn" id="btnOK">OK</button>
+                <button class="win95-btn" id="btnCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Handle window control buttons
+        document.querySelector('.control-btn.close').addEventListener('click', () => {
+            window.close();
+        });
+
+        // Handle Cancel button
+        document.getElementById('btnCancel').addEventListener('click', () => {
+            window.close();
+        });
+
+        // Handle OK button
+        document.getElementById('btnOK').addEventListener('click', async () => {
+            const dateFrom = document.getElementById('dateFrom').value;
+            const dateTo = document.getElementById('dateTo').value;
+            const branch = document.getElementById('branch').value;
+            const userFinished = document.getElementById('userFinished').value;
+            const userCreated = document.getElementById('userCreated').value;
+            const previewOnly = document.getElementById('previewOnly').checked;
+
+            // TODO: Implement posting logic
+            console.log('Posting invoices with params:', {
+                dateFrom,
+                dateTo,
+                branch,
+                userFinished,
+                userCreated,
+                previewOnly
+            });
+        });
+
+        // Auto-format date inputs
+        document.querySelectorAll('.date-input').forEach(input => {
+            input.addEventListener('blur', (e) => {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length >= 6) {
+                    value = value.substring(0, 2) + '/' + 
+                            value.substring(2, 4) + '/' + 
+                            value.substring(4, 6);
+                    e.target.value = value;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Invoice</title>
+    <link rel="stylesheet" href="add-invoice.css">
+    <link rel="stylesheet" href="tabs/service.css">
+    <link rel="stylesheet" href="tabs/dispatching.css">
+    <link rel="stylesheet" href="tabs/invoice-cont.css">
+    <link rel="stylesheet" href="tabs/warranty.css">
+    <link rel="stylesheet" href="tabs/documents.css">
+    <link rel="stylesheet" href="tabs/notepad.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <span>Add Invoice</span>
+        </div>
+        <div class="content">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="invoice">Invoice</button>
+                <button class="tab-button" data-tab="service">Service</button>
+                <button class="tab-button" data-tab="dispatching">Dispatching</button>
+                <button class="tab-button" data-tab="invoicecont">Invoice Cont.</button>
+                <button class="tab-button" data-tab="warranty">Warranty</button>
+                <button class="tab-button" data-tab="documents">Documents</button>
+                <button class="tab-button" data-tab="notepad">Notepad</button>
+            </div>
+
+            <!-- INVOICE TAB -->
+            <div class="tab-content active" id="tab-invoice">
+                <div class="form-container">
+                    <div class="form-column left-column">
+                        <div class="form-row">
+                            <label>Invoice #</label>
+                            <input type="text" id="invoice-no" class="input-short" value="SYSTEM">
+                        </div>
+                        <div class="form-row">
+                            <label>Invoice Date</label>
+                            <input type="text" id="invoice-date" class="lbl-PickUp" value="00/00/00">
+                        </div>
+
+                        <div class="form-row">
+                            <label>Invoice Type</label>
+                            <select id="invoice-type-code" class="input-short">
+                                <option value="">Select...</option>
+                                <option value="D-WTY">D-WTY</option>
+                                <option value="PT">PT</option>
+                                <option value="QT">QT</option>
+                                <option value="SA">SA</option>
+                                <option value="WH">WH</option>
+                                <option value="WHQ">WHQ</option>
+                                <option value="WPEX">WPEX</option>
+                                <option value="WTY">WTY</option>
+                                <option value="WTYL">WTYL</option>
+                                <option value="WTYP">WTYP</option>
+                            </select>
+                            <input type="text" id="invoice-type-default" class="input-short" placeholder="Description (e.g. Danny's Warranty)" value="" readonly>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Payment Type</label>
+                            <select id="payment-type-code" class="input-short">
+                                <option value="">Select...</option>
+                                <option value="AR-10">AR-10</option>
+                                <option value="AR-15">AR-15</option>
+                                <option value="AR-30">AR-30</option>
+                                <option value="COD">COD</option>
+                                <option value="PMCOD">PMCOD</option>
+                            </select>
+                            <input type="text" id="payment-type-default" class="input-short" placeholder="Description (e.g. Danny's Warranty)" value="" readonly>
+                        </div>
+                        <div class="form-row">                        
+                            <a href="#" class="win95-link" onclick="handlePaymentLink(); return false;">Payment Link</a>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Service At</label>
+                            <input type="text" id="Service" class="input-short" value="">
+                        </div>
+
+                        <div class="form-row">
+                            <textarea id="service-at-notes" class="textarea-large" readonly></textarea>
+                        </div>
+
+                        <div class="form-row" id="ba-builder-row">
+                            <label>BA Builder #</label>
+                            <input type="text" id="ba-builder-number" class="input-short" value="">
+                        </div>
+
+                        <div class="form-row">
+                            <label>Salesperson 1</label>
+                            <select id="salesperson-1" class="input-code" aria-label="Salesperson 1 Code">
+                                <option value="">Select...</option>
+                                <!-- Options will be populated by JavaScript -->
+                            </select>
+                            <input type="text" id="salesperson-1-input" class="input-desc" placeholder="Name/Description" value="" readonly>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Salesperson 2</label>
+                            <select id="salesperson-2" class="input-code" aria-label="Salesperson 2 Code">
+                                <option value="">Select...</option>
+                                <!-- Options will be populated by JavaScript -->
+                            </select>
+                            <input type="text" id="salesperson-2-input" class="input-desc" placeholder="Name/Description" value="" readonly> 
+                            <p>%</p>
+
+                            <input type="number" id="salesperson-2-input" class="lbl-PickUp" placeholder="0.000" value="" readonly>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Sale Referral</label>
+                            <select id="sale-referral" class="input-code" aria-label="Sale Referral Code">
+                                <option value="">Select...</option>
+                            </select>
+                            <input type="text" id="sale-referral-input" class="input-desc" placeholder="Name/Description" value="" readonly>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Min Deposit</label>
+                            <input type="number" id="min-deposit" class="lbl-PickUp" placeholder="0.00" value="" readonly>
+                            <p>%</p>
+                        </div>
+                    </div>
+
+                    <div class="form-column right-column">
+                        <div class="form-row">
+                            <label>Requested Date Date</label>
+                            <input type="text" id="requested-date" class="lbl-PickUp" value="00/00/00" readonly>
+                            <button type="button" class="date-picker-button" onclick="showDatePicker('schedule-date')">📅</button>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Schedule Date</label>
+                            <input type="text" id="schedule-date" class="lbl-PickUp" value="00/00/00" readonly>
+                            <button type="button" class="date-picker-button" onclick="showDatePicker('schedule-date')">📅</button>
+
+                            <label class="lbl-PickUp">Pick Up</label>
+                            <input type="text" id="pick-up" class="lbl-PickUp" value="00/00/00" readonly>
+                            <button type="button" class="date-picker-button" onclick="showDatePicker('pick-up')">📅</button>
+                        
+                            <!-- Date Picker Popup -->
+                            <div id="date-picker-popup" class="date-picker-popup" style="display: none;">
+                                <div class="date-picker-header">
+                                    <button onclick="prevMonth()">❮</button>
+                                    <h3 id="current-month"></h3>
+                                    <button onclick="nextMonth()">❯</button>
+                                </div>
+                            <div class="date-picker-grid" id="date-grid"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <label>Job Status</label>
+                            <select id="job-status" class="input-short">
+                                <option value="">Select...</option>
+                                <option value="BOP">BOP</option>
+                                <option value="CXL">CXL</option>
+                                <option value="FINISHED">FINISHED</option>
+                                <option value="NAOO">NAOOr</option>
+                                <option value="NIKKI">NIKKI</option>
+                                <option value="PCPU">PCPU</option>
+                                <option value="PI">PI</option>
+                                <option value="PNTBO">PNTBO</option>
+                                <option value="POO">POO</option>
+                                <option value="PREAUTH">PREAUTH</option>
+                                <option value="PREDIA">PREDIA</option>
+                                <option value="QUOTE">QUOTE</option>
+                                <option value="RESCH">RESCH</option>
+                                <option value="RESEARCH">RESEARCH</option>
+                                <option value="RTV">RTV</option>
+                                <option value="SCHED">SCHED</option>
+                                <option value="SCPU">SCPU</option>
+                                <option value="SHOPSVC">SHOPSVC</option>
+                                <option value="SVCMQ">SVCMQ</option>
+                                <option value="SWAP">SWAP</option>
+                                <option value="WHW">WHW</option>
+                                <option value="WOC">WOC</option>
+                                <option value="WOS">WOS</option>
+                                <option value="WPN">WPN</option>
+                                <option value="WTYQ">WTYQ</option>
+                            </select>
+                            <input type="text" id="job-status-input" class="input-short" placeholder="Description (e.g. Danny's Warranty)" value="" readonly>
+                        </div>
+
+                        <div class="form-row">
+                            <label>PO Number</label>
+                            <input type="text" id="po-number" class="po-number" value="">
+                        </div>
+
+                        <div class="form-row">
+                            <label>Reference</label>
+                            <input type="text" id="reference" class="input-short" value="">
+                        </div>
+
+                        <div class="form-row">
+                            <label>Bill To</label>
+                            <select id="bill-to" class="input-code" aria-label="Bill To Code">
+                                <option value="">Select...</option>
+                            </select>
+                            <input type="text" id="bill-to-input" class="input-desc" placeholder="Name/Description" value="" readonly>
+                        </div>
+ 
+                        <div class="form-row financed-row">
+                            <input type="checkbox" id="financed" class="win95-checkbox">
+                            <label for="financed" class="checkbox-label">Financed</label>
+                            <textarea id="financed-notes" class="textarea-large-right" readonly></textarea>
+                        </div>
+
+                        <!-- Summary block: Total | Status | Customer Phone Log and Dates -->
+                        <div class="summary-row">
+                            <div class="total-status">
+                                <div class="total-line">
+                                    <a href="#" class="win95-link">Total</a>
+                                    <input type="text" id="invoice-total" class="input-short right-align" value="0.00" readonly>
+                                </div>
+                                <div class="status-frame">
+                                    <div class="status-title">Status</div>
+                                    <div class="status-body">
+                                        <input type="text" class="input-short" value="Open" readonly>
+                                        <input type="text" id="invoice-date" class="lbl-PickUp" value="00/00/00">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dates-block">
+                                <div class="customer-log"><a href="#" class="win95-link">Customer Phone Log</a></div>
+                                <div class="dates-grid">
+                                    <label>Created</label><input type="text" class="date-field" value="00/00/00" readonly>
+                                    <label>Modified</label><input type="text" class="date-field" value="00/00/00" readonly>
+                                    <label>Finished</label><input type="text" class="date-field" value="00/00/00" readonly>
+                                    <label>Posted</label><input type="text" class="date-field" value="00/00/00" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SERVICE TAB (lazy-loaded) -->
+            <div class="tab-content" id="tab-service" data-src="tabs/service.html"></div>
+
+            <!-- DISPATCHING TAB -->
+            <div class="tab-content" id="tab-dispatching" data-src="tabs/dispatching.html"></div>
+
+            <!-- INVOICE CONT. TAB -->
+            <div class="tab-content" id="tab-invoicecont" data-src="tabs/invoice-cont.html"></div>
+
+            <!-- WARRANTY TAB -->
+            <div class="tab-content" id="tab-warranty" data-src="tabs/warranty.html"></div>
+
+            <!-- DOCUMENTS TAB -->
+            <div class="tab-content" id="tab-documents" data-src="tabs/documents.html"></div>
+
+            <!-- NOTEPAD TAB -->
+            <div class="tab-content" id="tab-notepad" data-src="tabs/notepad.html"></div>
+
+            <!-- Bottom action buttons -->
+            <div class="bottom-actions">
+                <button type="button" class="win95-btn">OK</button>
+                <button type="button" id="btn-cancel" class="win95-btn">Cancel</button>
+                <button type="button" class="win95-btn">Detail</button>
+            </div>
+        </div>
+    </div>
+    <script src="add-invoice-scripts/date-initializer.js"></script>
+    <script src="add-invoice-scripts/payment-type-handler.js"></script>
+    <script src="add-invoice-scripts/date-picker.js"></script>
+    <script src="add-invoice-scripts/job-status.js"></script>
+    <script src="add-invoice-scripts/invoice-type-handler.js"></script>
+    <!-- Supabase: credentials must be set BEFORE client init -->
+    <script>
+      // TODO: replace with your real project values
+      window.SUPABASE_URL = 'https://frzbvnjoihrsovruxaay.supabase.co';
+      window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZyemJ2bmpvaWhyc292cnV4YWF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzNTczNDcsImV4cCI6MjA2NTkzMzM0N30.4qNgM7ULfyuCQWsPpwXu8q_Aj7aFGcaPnJ0SvPFpvfQ';
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="add-invoice-scripts/supabaseClient.js"></script>
+    <script src="add-invoice-scripts/actions.js"></script>
+    <script src="add-invoice-tabs.js"></script>
+    <script src="tabs/service.js"></script>
+
+    <script>
+      // Tab switching (invoice/service)
+      const tabButtons = document.querySelectorAll('.tab-button');
+      // Initialize tab content elements
+      document.querySelectorAll('.tab-content[data-src]').forEach(tab => {
+        if (tab.classList.contains('active')) {
+          window.loadTabPartial(tab);
+        }
+      });
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-tab');
+          if (!key) return;
+          tabButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+          const el = document.getElementById('tab-' + key);
+          if (el) {
+            // Lazy-load if needed
+            if (el.dataset.src && !el.dataset.loaded) {
+              window.loadTabPartial(el);
+            }
+            el.classList.add('active');
+          }
+        });
+      });
+    </script>
+  </body>
+  </html>
+
+<script>
+    function handlePaymentLink() {
+    // Add your payment link functionality here
+    console.log("Payment link clicked");
+    // window.location.href = "your-payment-url-here";
+}
+
+// Either use DOMContentLoaded as you have, or:
+window.addEventListener('load', function() {
+    console.log('Window loaded, initializing salespersons...');
+    populateSalespersons();
+});
+
+</script>
+

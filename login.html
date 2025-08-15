@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="add-invoice-scripts/supabaseClient.js"></script>
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="card">
+      <div class="title">Sign in</div>
+      <div class="field">
+        <label for="login-id">Email or Username</label>
+        <input type="text" id="login-id" placeholder="you@example.com" value="patrick@optitechri.com" autofocus>
+      </div>
+      <div class="field">
+        <label for="login-pass">Password</label>
+        <input type="password" id="login-pass" placeholder="••••••••" value="password">
+      </div>
+      <div class="actions">
+        <button id="login-submit" class="btn primary">Sign In</button>
+        <button id="login-cancel" class="btn">Cancel</button>
+      </div>
+      <div id="login-error" class="error" hidden>Invalid credentials</div>
+    </div>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>

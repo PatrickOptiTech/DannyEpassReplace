@@ -1,0 +1,179 @@
+.notepad-container {
+  padding: 8px;
+  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: calc(100% - 16px);
+}
+
+/* Notes Section */
+.notes-section {
+  border: 1px solid #808080;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.notes-header {
+  margin-bottom: 8px;
+}
+
+.notes-options {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Date Filter */
+.date-filter {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.input-date {
+  width: 80px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+/* Text Filter */
+.text-filter {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.input-filter {
+  width: 200px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+/* Notes Table */
+.notes-table-container {
+  border: 1px solid #808080;
+  flex: 1;
+  overflow: auto;
+  margin-bottom: 8px;
+}
+
+.notes-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.notes-table th {
+  background: #d4d0c8;
+  border: 1px solid #808080;
+  padding: 2px 4px;
+  text-align: left;
+  font-weight: normal;
+  position: sticky;
+  top: 0;
+}
+
+.notes-table td {
+  border: 1px solid #808080;
+  padding: 2px 4px;
+}
+
+.note-column {
+  width: 50%;
+}
+
+.empty-row {
+  height: 100px;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.win95-btn {
+  padding: 4px 8px;
+  min-width: 80px;
+  height: 23px;
+  background: #d4d0c8;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  font-size: 11px;
+  text-align: center;
+}
+
+.win95-btn:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+  background: #c0c0c0;
+}
+
+/* Film Strip Button */
+.film-strip {
+  position: relative;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  background: linear-gradient(45deg, #d4d0c8 25%, transparent 25%),
+              linear-gradient(-45deg, #d4d0c8 25%, transparent 25%),
+              linear-gradient(45deg, transparent 75%, #d4d0c8 75%),
+              linear-gradient(-45deg, transparent 75%, #d4d0c8 75%);
+  background-size: 4px 4px;
+  background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+}
+
+/* Fields Section */
+.fields-section {
+  border: 1px solid #808080;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.field-row label {
+  width: 50px;
+}
+
+.input-long {
+  flex: 1;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+/* Checkbox Styles */
+.win95-checkbox {
+  margin: 0;
+  margin-right: 4px;
+}
+
+/* Windows 95 Input Focus */
+input:focus, button:focus {
+  outline: none;
+}

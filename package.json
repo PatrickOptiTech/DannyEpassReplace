@@ -1,0 +1,43 @@
+
+{
+  "name": "epass-desktop",
+  "version": "1.0.0",
+  "description": "A simple desktop application for EPASS.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^13.1.7",
+    "electron-builder": "^22.11.7"
+  },
+  "build": {
+    "appId": "com.epass.desktop",
+    "productName": "EPASS Desktop",
+    "files": [
+      "main.js",
+      "index.html",
+      "styles.css",
+      "preload.js",
+      "add-invoice.html",
+      "add-invoice.css",
+      "add-invoice-scripts/date-initializer.js",
+      "add-invoice-scripts/invoice-type-handler.js",
+      "add-invoice-scripts/date-picker.js",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}

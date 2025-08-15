@@ -1,0 +1,471 @@
+body {
+    margin: 0;
+    font-family: "MS Sans Serif", Arial, sans-serif;
+    font-size: 11px;
+    background: #d4d0c8;
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #d4d0c8;
+}
+
+/* Title Bar */
+.title-bar {
+    background: #000080;
+    color: white;
+    padding: 2px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.control-btn {
+    width: 16px;
+    height: 14px;
+    border: 1px solid white;
+    background: #d4d0c8;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* Content Area */
+.content {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    overflow: auto;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 1px;
+    background: #d4d0c8;
+    padding: 0 4px;
+}
+
+.tab {
+    padding: 4px 12px;
+    border: 1px solid #808080;
+    background: #d4d0c8;
+    cursor: pointer;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 1;
+}
+
+.tab.active {
+    background: #d4d0c8;
+    border-bottom-color: #d4d0c8;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    border: 1px solid #808080;
+    padding: 16px;
+    background: #d4d0c8;
+    flex: 1;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Form Layout */
+.form-layout {
+    display: flex;
+    gap: 16px;
+}
+
+.left-column {
+    flex: 3;
+}
+
+.right-column {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Form Elements */
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.form-row label {
+    min-width: 120px;
+}
+
+.po-number {
+    display: flex;
+    gap: 4px;
+}
+
+.short-input {
+    width: 80px;
+}
+
+.system-input {
+    width: 100px;
+    background: #d4d0c8;
+}
+
+.full-input {
+    flex: 1;
+    min-width: 200px;
+}
+
+.amount-input {
+    width: 120px;
+}
+
+.right-align {
+    text-align: right;
+}
+
+/* Confirmations Section */
+.confirmations {
+    border: 1px solid #808080;
+    padding: 8px;
+    margin: 16px 0;
+}
+
+.confirmation-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.confirmation-row label {
+    min-width: 80px;
+}
+
+.conf-input {
+    flex: 1;
+}
+
+.date-input {
+    width: 80px;
+    background: #d4d0c8;
+}
+
+/* Location Section */
+.location-input {
+    width: 120px;
+}
+
+/* Buyer Notes */
+.buyer-notes {
+    width: 100%;
+    resize: none;
+    margin-bottom: 16px;
+}
+
+/* Checkboxes */
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Dates Section */
+.dates-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid #808080;
+    padding: 8px;
+}
+
+.date-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.date-row label {
+    min-width: 80px;
+}
+
+/* Bottom Buttons */
+.bottom-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 8px;
+    background: #d4d0c8;
+    border-top: 1px solid #808080;
+}
+
+/* Button Styles */
+.win95-btn {
+    padding: 4px 8px;
+    min-width: 75px;
+    height: 23px;
+    background: #d4d0c8;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    font-size: 11px;
+    text-align: center;
+}
+
+.win95-btn:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: #c0c0c0;
+}
+
+/* Input Styles */
+input[type="text"],
+select,
+textarea {
+    border: 1px solid #808080;
+    background: white;
+    height: 20px;
+    padding: 1px 4px;
+}
+
+textarea {
+    height: auto;
+}
+
+input[readonly] {
+    background: #d4d0c8;
+}
+
+/* Notepad Tab Styles */
+.notepad-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    padding: 8px;
+}
+
+.notes-grid {
+    flex: 1;
+    border: 1px solid #808080;
+    background: white;
+    overflow: auto;
+}
+
+.notes-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.notes-table th {
+    background: #d4d0c8;
+    border: 1px solid #808080;
+    padding: 4px 8px;
+    text-align: left;
+    font-weight: normal;
+    position: sticky;
+    top: 0;
+}
+
+.notes-table td {
+    border: 1px solid #c0c0c0;
+    padding: 4px 8px;
+}
+
+.notes-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.right-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+/* Documents Tab Styles */
+.documents-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    padding: 8px;
+}
+
+.instructions {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-size: 11px;
+}
+
+.documents-grid {
+    flex: 1;
+    border: 1px solid #808080;
+    background: white;
+    overflow: auto;
+}
+
+.documents-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.documents-table th {
+    background: #d4d0c8;
+    border: 1px solid #808080;
+    padding: 4px 8px;
+    text-align: left;
+    font-weight: normal;
+    position: sticky;
+    top: 0;
+}
+
+.documents-table td {
+    border: 1px solid #c0c0c0;
+    padding: 4px 8px;
+}
+
+.documents-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.left-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.right-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-end;
+}
+
+.right-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.view-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.film-strip {
+    position: relative;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: linear-gradient(45deg, #d4d0c8 25%, transparent 25%),
+                linear-gradient(-45deg, #d4d0c8 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #d4d0c8 75%),
+                linear-gradient(-45deg, transparent 75%, #d4d0c8 75%);
+    background-size: 4px 4px;
+    background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+}
+
+/* Ship To Tab Styles */
+.ship-to-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ship-to-input {
+    width: 200px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 20px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.center-area {
+    flex: 1;
+}
+
+.ship-to-details {
+    width: 100%;
+    height: 100%;
+    resize: none;
+}
+
+.right-side {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.right-side .win95-btn {
+    width: 75px;
+}
+
+.bottom-area {
+    margin-top: auto;
+}
+
+.ship-to-note {
+    width: 100%;
+}
+
+/* Windows 95 Input Focus */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}

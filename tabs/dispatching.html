@@ -1,0 +1,156 @@
+<div class="dispatching-container">
+  <!-- All Calls Table Header -->
+  <div class="all-calls-section">
+    <div class="section-title">All Calls</div>
+    <table class="all-calls-table">
+      <tr>
+        <th></th>
+        <th>Primary</th>
+        <th>Zone</th>
+        <th>Date</th>
+        <th>Route</th>
+        <th>Units</th>
+        <th>Department</th>
+        <th>Special Request</th>
+      </tr>
+      <tr class="empty-row">
+        <td colspan="8"></td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="action-buttons">
+    <button class="win95-btn">Review</button>
+    <button class="win95-btn">Add</button>
+    <button class="win95-btn">Edit</button>
+    <button class="win95-btn">Delete</button>
+    
+    <div class="primary-call-section">
+      <input type="checkbox" id="primary-call" class="win95-checkbox">
+      <label for="primary-call">Primary Call Only</label>
+      
+      <div class="driving-status">
+        <img src="assets/car-icon.png" alt="Car" class="car-icon">
+        <span class="driving-text">Driving to Customer</span>
+        <span class="address-status">Address not validated</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Form Section -->
+  <div class="dispatch-form">
+    <div class="form-left">
+      <div class="form-row">
+        <label>Map Zone</label>
+        <input type="text" class="input-short">
+      </div>
+      
+      <div class="form-row">
+        <label>Req Route</label>
+        <input type="text" class="input-short">
+        <input type="text" class="input-desc" readonly>
+      </div>
+      
+      <div class="form-row">
+        <label>Route</label>
+        <input type="text" class="input-short">
+        <input type="text" class="input-desc" readonly>
+      </div>
+      
+      <div class="form-row">
+        <label>Department</label>
+        <select class="dropdown-medium">
+          <option>SALES</option>
+        </select>
+      </div>
+
+      <!-- Priorities and Qualifications Section -->
+      <div class="lists-section">
+        <div class="list-box">
+          <div class="list-header">Priorities</div>
+          <div class="list-content"></div>
+          <div class="list-buttons">
+            <button class="win95-btn">Add</button>
+            <button class="win95-btn">Delete</button>
+          </div>
+        </div>
+        
+        <div class="list-box">
+          <div class="list-header">Qualifications</div>
+          <div class="list-content"></div>
+          <div class="list-buttons">
+            <button class="win95-btn">Add</button>
+            <button class="win95-btn">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-right">
+      <div class="form-row">
+        <label>Map Ref</label>
+        <input type="text" class="input-long">
+      </div>
+      
+      <div class="form-row">
+        <label>Schedule Date</label>
+        <input type="text" class="input-date" value="00/00/00">
+        <input type="text" class="input-short" value="SCHED">
+        <button class="win95-btn">SCHEDULED DA</button>
+      </div>
+      
+      <div class="form-row">
+        <label>Requested Time</label>
+        <div class="time-input">
+          <input type="text" class="time-field" value="00:00">
+          <button class="dropdown-btn">▼</button>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <label>Units</label>
+        <input type="text" class="input-number" value="0">
+      </div>
+      
+      <div class="form-row">
+        <label>Call Seq</label>
+        <input type="text" class="input-number" value="0">
+      </div>
+
+      <div class="time-section">
+        <div class="form-row">
+          <label>In</label>
+          <div class="time-input">
+            <input type="text" class="time-field" value="00:00">
+            <button class="dropdown-btn">▼</button>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <label>Out</label>
+          <div class="time-input">
+            <input type="text" class="time-field" value="00:00">
+            <button class="dropdown-btn">▼</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <input type="checkbox" id="completed" class="win95-checkbox">
+        <label for="completed">Completed</label>
+      </div>
+
+      <div class="form-row">
+        <label>Special Request</label>
+        <textarea class="special-request"></textarea>
+      </div>
+
+      <!-- Side Buttons -->
+      <div class="side-buttons">
+        <button class="win95-btn">Calls</button>
+        <button class="win95-btn">Map</button>
+      </div>
+    </div>
+  </div>
+</div>

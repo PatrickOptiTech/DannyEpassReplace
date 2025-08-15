@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales Queue</title>
+    <link rel="stylesheet" href="sales-queue.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="add-invoice-scripts/supabaseClient.js"></script>
+    <script src="add-invoice-scripts/sales-queue-handler.js"></script>
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <span>Sales Queue</span>
+            <div class="window-controls">
+                <button class="control-btn minimize">-</button>
+                <button class="control-btn maximize">□</button>
+                <button class="control-btn close">×</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="grid-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Name</th>
+                            <th>Cell Phone</th>
+                            <th>Note</th>
+                            <th>ePASS User</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data rows will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="button-bar">
+            <button class="win95-btn" id="btnAdd">Add</button>
+            <button class="win95-btn" id="btnEdit">Edit</button>
+            <button class="win95-btn" id="btnCancel">Cancel</button>
+            <button class="win95-btn" id="btnText">Text</button>
+            <button class="win95-btn" id="btnRefresh">Refresh</button>
+            <button class="win95-btn" id="btnExit">Exit</button>
+        </div>
+    </div>
+
+    <script>
+        // Handle window control buttons
+        document.querySelector('.control-btn.close').addEventListener('click', () => {
+            window.close();
+        });
+
+        // Handle button clicks
+        document.getElementById('btnExit').addEventListener('click', () => {
+            window.close();
+        });
+
+        document.getElementById('btnAdd').addEventListener('click', () => {
+            window.salesQueueHandler.openForm(false);
+        });
+
+        document.getElementById('btnEdit').addEventListener('click', () => {
+            if (!window.selectedQueueItem) {
+                alert('Please select an item to edit');
+                return;
+            }
+            window.salesQueueHandler.openForm(true);
+        });
+
+        document.getElementById('btnCancel').addEventListener('click', () => {
+            window.salesQueueHandler.deleteQueueItem();
+        });
+
+        document.getElementById('btnRefresh').addEventListener('click', () => {
+            window.salesQueueHandler.loadSalesQueue();
+        });
+
+        // Load data when window opens
+        document.addEventListener('DOMContentLoaded', () => {
+            window.salesQueueHandler.loadSalesQueue();
+        });
+    </script>
+</body>
+</html>

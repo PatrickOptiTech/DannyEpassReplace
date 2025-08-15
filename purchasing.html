@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Purchasing</title>
+    <link rel="stylesheet" href="purchasing.css">
+    <!-- Load Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>console.log('Supabase CDN loaded');</script>
+    
+    <!-- Load our Supabase client -->
+    <script src="add-invoice-scripts/supabaseClient.js"></script>
+</head>
+<body>
+    <script>console.log('Page starting to load...');</script>
+    <div class="window">
+        <div class="title-bar">
+            <span>Purchasing</span>
+            <div class="window-controls">
+                <button class="control-btn minimize">-</button>
+                <button class="control-btn maximize">□</button>
+                <button class="control-btn close">×</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Search Options -->
+            <div class="search-options">
+                <div class="search-header">
+                    <span>Search Options</span>
+                    <a href="#" class="default-search">Click here to make this your default Search</a>
+                </div>
+
+                <div class="search-rows">
+                    <div class="search-row">
+                        <label>Search For</label>
+                        <input type="text" class="search-input">
+                        <label>By</label>
+                        <select class="dropdown-medium">
+                            <option>PO #</option>
+                            <option>Supplier</option>
+                            <option>Buyer</option>
+                            <option>Reference #</option>
+                            <option>Supp Inv #</option>
+                            <option>Packing Slip #</option>
+                            <option>BO Inv #</option>
+                            <option>Date Started</option>
+                            <option>Date Ordered</option>
+                            <option>Date Received</option>
+                            <option>Date Costed</option>
+                            <option>Date Finished</option>
+                            <option>Date Effective</option>
+                            <option>Confirmed</option>
+                        </select>
+                        <label>Matching</label>
+                        <select class="dropdown-small">
+                            <option>Equal</option>
+                            <option>Start of Field</option>
+                            <option>End of Field</option>
+                            <option>Anywhere</option>
+                        </select>
+                        <button class="win95-btn search-btn">Search</button>
+                    </div>
+
+                    <div class="search-row">
+                        <select class="dropdown-small">
+                            <option>AND</option>
+                            <option>OR</option>
+                        </select>
+                        <label>For</label>
+                        <input type="text" class="search-input">
+                        <label>By</label>
+                        <select class="dropdown-medium">
+                            <option>PO #</option>
+                            <option>Supplier</option>
+                            <option>Buyer</option>
+                            <option>Reference #</option>
+                            <option>Supp Inv #</option>
+                            <option>Packing Slip #</option>
+                            <option>BO Inv #</option>
+                            <option>Date Started</option>
+                            <option>Date Ordered</option>
+                            <option>Date Received</option>
+                            <option>Date Costed</option>
+                            <option>Date Finished</option>
+                            <option>Date Effective</option>
+                            <option>Confirmed</option>
+                        </select>
+                        <label>Matching</label>
+                        <select class="dropdown-small">
+                            <option>Equal</option>
+                            <option>Start of Field</option>
+                            <option>End of Field</option>
+                            <option>Anywhere</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Grid Section -->
+            <div class="grid-section">
+                <!-- Tree View -->
+                <div class="tree-view">
+                    <div class="tree-item">
+                        <span class="expand-icon">+</span>
+                        <span>Supplier</span>
+                    </div>
+                    <div class="tree-item-children">
+                        <div class="tree-item">
+                            <span>All Suppliers</span>
+                        </div>
+                        <div class="tree-item">
+                            <span>Active Suppliers</span>
+                        </div>
+                        <div class="tree-item">
+                            <span>Inactive Suppliers</span>
+                        </div>
+                        <div class="tree-item">
+                            <span>Preferred Suppliers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Grid -->
+                <div class="data-grid">
+                    <table class="grid-table">
+                        <thead>
+                            <tr>
+                                <th class="calendar-col">📅</th>
+                                <th>PO #</th>
+                                <th>Supplier</th>
+                                <th>Buyer</th>
+                                <th>Reference #</th>
+                                <th>Supp Inv #</th>
+                                <th>Packing Slip #</th>
+                                <th>BO Inv #</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data rows will be added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="bottom-section">
+                <div class="record-count">
+                    <label>Record Count</label>
+                    <input type="text" class="count-input" readonly>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="win95-btn">Detail</button>
+                    <button class="win95-btn">Review</button>
+                    <button class="win95-btn film-strip">Add</button>
+                    <button class="win95-btn">Edit</button>
+                    <button class="win95-btn">Delete</button>
+                    <button class="win95-btn">Excel</button>
+                    <button class="win95-btn">Split</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load required scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="add-invoice-scripts/supabaseClient.js"></script>
+
+    <!-- Main application script -->
+    <script>
+        // Wait for Supabase to initialize
+        function waitForSupabase(callback) {
+            if (window.supabaseClient) {
+                callback();
+            } else {
+                console.log('Waiting for Supabase to initialize...');
+                setTimeout(() => waitForSupabase(callback), 100);
+            }
+        }
+
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM loaded, waiting for Supabase...');
+            
+            waitForSupabase(() => {
+                console.log('Supabase is ready to use');
+                
+                // Test the connection immediately
+                window.supabaseClient
+                    .from('supplier')
+                    .select('*')
+                    .then(({ data, error }) => {
+                        if (error) {
+                            console.error('Failed to fetch suppliers:', error);
+                        } else {
+                            console.log('Successfully fetched suppliers:', data);
+                        }
+                    });
+
+                // Set up click handlers after Supabase is ready
+                setupSupplierHandlers();
+            });
+        });
+
+        // Function to set up supplier click handlers
+        function setupSupplierHandlers() {
+            console.log('Setting up supplier handlers...');
+            
+            const supplierItem = document.querySelector('.tree-item');
+            console.log('Found supplier item:', supplierItem);
+            
+            if (supplierItem) {
+                const icon = supplierItem.querySelector('.expand-icon');
+                const children = supplierItem.nextElementSibling;
+                console.log('Found icon:', icon);
+                console.log('Found children:', children);
+                
+                supplierItem.addEventListener('click', async (e) => {
+                    console.log('Supplier item clicked!');
+                    if (children && children.classList.contains('tree-item-children')) {
+                        console.log('Processing click...');
+                        // Toggle icon and visibility
+                        const isExpanding = icon.textContent === '+';
+                        icon.textContent = isExpanding ? '-' : '+';
+                        children.classList.toggle('expanded');
+                        
+                        // Load suppliers when expanding
+                        if (isExpanding) {
+                            console.log('Expanding, will load suppliers...');
+                            try {
+                                await populateSuppliers();
+                                console.log('Suppliers loaded successfully');
+                            } catch (error) {
+                                console.error('Error loading suppliers:', error);
+                            }
+                        }
+                    }
+                });
+                
+                console.log('Click handler attached successfully');
+            } else {
+                console.error('Could not find supplier item!');
+            }
+        }
+        
+        // Handle window control buttons
+        document.querySelector('.control-btn.close').addEventListener('click', () => {
+            window.close();
+        });
+
+        // Fetch and populate suppliers from Supabase
+        async function populateSuppliers() {
+            console.log('Starting to fetch suppliers...');
+            const supplierList = document.querySelector('.tree-item-children');
+            console.log('Supplier list element:', supplierList);
+            
+            if (!supplierList) {
+                console.error('Could not find supplier list element');
+                return;
+            }
+
+            if (!window.supabaseClient) {
+                console.error('Supabase client is not initialized');
+                return;
+            }
+            
+            try {
+                console.log('Making Supabase query...');
+                // First check if we can access Supabase
+                if (!window.supabaseClient) {
+                    throw new Error('Supabase client is not available');
+                }
+                
+                // Test the connection first
+                console.log('Testing Supabase connection...');
+                try {
+                    const { data: testData } = await window.supabaseClient
+                        .from('supplier')
+                        .select('count');
+                    console.log('Connection test result:', testData);
+                } catch (e) {
+                    console.error('Connection test failed:', e);
+                }
+
+                // Now make the actual query
+                const { data, error } = await window.supabaseClient
+                    .from('supplier')  // Correct table name
+                    .select('code')
+                    .order('code', { ascending: true });
+                
+                console.log('Raw Supabase response:', data);
+
+                console.log('Supabase response:', { data, error });
+
+                if (error) {
+                    console.error('Error fetching suppliers:', error);
+                    return;
+                }
+
+                if (!data || data.length === 0) {
+                    console.log('No suppliers found in database');
+                    supplierList.innerHTML = `
+                        <div class="tree-item">
+                            <span>All Suppliers</span>
+                        </div>
+                        <div class="tree-item">
+                            <span>No suppliers found</span>
+                        </div>
+                    `;
+                    return;
+                }
+
+                // Clear existing static options
+                supplierList.innerHTML = `
+                    <div class="tree-item">
+                        <span>All Suppliers</span>
+                    </div>
+                `;
+
+                // Add supplier codes from database
+                // Sort suppliers alphabetically
+                data.sort((a, b) => a.code.localeCompare(b.code));
+                
+                data.forEach(supplier => {
+                    console.log('Adding supplier:', supplier);
+                    supplierList.innerHTML += `
+                        <div class="tree-item">
+                            <span>${supplier.code}</span>
+                        </div>
+                    `;
+                });
+
+                console.log('Finished populating suppliers');
+
+            } catch (error) {
+                console.error('Error in populateSuppliers:', error);
+                supplierList.innerHTML = `
+                    <div class="tree-item">
+                        <span>All Suppliers</span>
+                    </div>
+                    <div class="tree-item">
+                        <span>Error loading suppliers</span>
+                    </div>
+                `;
+            }
+        }
+
+        // Handle tree view expansion
+        console.log('Setting up click handlers...');
+        
+        // Get the supplier item directly
+        const supplierItem = document.querySelector('.tree-item');
+        console.log('Looking for supplier item...');
+        console.log('Found supplier item:', supplierItem);
+            
+            if (supplierItem) {
+                const icon = supplierItem.querySelector('.expand-icon');
+                const children = supplierItem.nextElementSibling;
+                console.log('Found icon:', icon);
+                console.log('Found children:', children);
+                
+                supplierItem.addEventListener('click', async (e) => {
+                    console.log('Supplier item clicked!');
+                    if (children && children.classList.contains('tree-item-children')) {
+                        console.log('Processing click...');
+                        // Toggle icon and visibility
+                        const isExpanding = icon.textContent === '+';
+                        icon.textContent = isExpanding ? '-' : '+';
+                        children.classList.toggle('expanded');
+                        
+                        // Load suppliers when expanding
+                        if (isExpanding) {
+                            console.log('Expanding, will load suppliers...');
+                            try {
+                                await populateSuppliers();
+                                console.log('Suppliers loaded successfully');
+                            } catch (error) {
+                                console.error('Error loading suppliers:', error);
+                            }
+                        }
+                    }
+                });
+                
+                console.log('Click handler attached successfully');
+            } else {
+                console.error('Could not find supplier item!');
+            }
+        });
+
+        // Handle Add button click
+        document.querySelector('.film-strip').addEventListener('click', () => {
+            window.electron.openAddPo();
+        });
+
+        // Handle Sales Queue button click
+        document.querySelector('.title-btn').addEventListener('click', () => {
+            // You can customize this to open your sales queue window
+            window.electron.openSalesQueue();
+        });
+    </script>
+</body>
+</html>

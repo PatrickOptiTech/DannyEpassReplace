@@ -1,0 +1,419 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Tahoma', Geneva, Verdana, sans-serif;
+    background-color: #d4d0c8;
+    font-size: 11px;
+    overflow: hidden;
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.title-bar {
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: white;
+    padding: 3px 5px;
+    font-weight: bold;
+}
+
+.content {
+    padding: 8px;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab-button {
+    padding: 6px 10px;
+    border: 1px solid;
+    border-color: #fff #808080 #808080 #fff;
+    background-color: #d4d0c8;
+    margin-right: 1px;
+    cursor: pointer;
+}
+
+.tab-button.active {
+    border-bottom-color: #d4d0c8;
+    position: relative;
+    top: 1px;
+}
+
+.form-container {
+    display: flex;
+    flex-grow: 1;
+    border: 1px solid;
+    border-color: #808080 #fff #fff #808080;
+    margin: -1px 8px 8px 8px;
+    padding: 10px;
+}
+
+.main-form {
+    display: flex;
+    flex-grow: 1;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.column:first-child { flex-basis: 55%; }
+.column:last-child { flex-basis: 45%; }
+
+.form-row-left {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.form-row-right-col {
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.form-row-right {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    margin-left: 450px;
+}
+
+label {
+    margin-right: 5px;
+    min-width: 80px;
+    text-align: right;
+}
+
+input[type="text"], textarea {
+    border: 1px solid #808080;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    background-color: white;
+    padding: 2px 3px;
+    font-family: 'Tahoma', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+}
+
+textarea {
+    height: 80px;
+}
+
+.lbl-PickUp {
+    width: 50px; /* Fixed width for date inputs */
+}
+
+
+
+.side-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+.side-buttons button {
+    width: 75px;
+}
+
+.po-number {
+    width: 241px;
+}
+
+.date-picker-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0 4px;
+}
+
+.date-picker-popup {
+    position: absolute;
+    background-color: #f0f0f0;
+    border: 1px solid #808080;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.date-picker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    background-color: #d4d0c8;
+}
+
+.date-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    padding: 4px;
+}
+
+.date-picker-grid div {
+    text-align: center;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.date-picker-grid div:hover {
+    background-color: #b0c4de;
+}
+
+.footer-form {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    gap: 15px;
+}
+
+.status-box {
+    border: 1px solid;
+    border-color: #808080 #fff #fff #808080;
+    padding: 4px;
+}
+
+.status-content {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 2px;
+    border: 1px solid #808080;
+    border-top-color: #404040;
+    border-left-color: #404040;
+}
+
+/* New Test */
+/* Existing styles remain the same until .content */
+
+.content {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.form-container {
+    display: flex;
+    flex-grow: 1;
+    gap: 20px; /* Space between columns */
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.left-column {
+    max-width: 50%; /* Adjust as needed */
+}
+
+.right-column {
+    max-width: 50%; /* Adjust as needed */
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.form-row label {
+    min-width: 100px;
+    text-align: right;
+    margin-right: 8px;
+}
+
+.input-short {
+    width: 120px; /* Adjust as needed */
+}
+
+.lbl-PickUp {
+    width: 70px;
+}
+
+.po-number {
+    width: 200px;
+}
+
+.date-picker-button {
+    margin-left: 4px;
+}
+
+/* Rest of your existing styles */
+
+.win95-link {
+    color: #000080;
+    text-decoration: underline;
+    cursor: default; /* Windows 95 used default cursor for links */
+    margin-left: 8px;
+    padding: 1px 2px;
+    background: none;
+    border: none;
+    font-family: 'Tahoma', Geneva, Verdana, sans-serif;
+    font-size: 11px;
+}
+
+.win95-link:hover {
+    color: red;
+}
+
+.win95-link:focus {
+    outline: 1px dotted #000080;
+    text-decoration: none;
+}
+
+/* Large textarea under Service At */
+.textarea-large {
+    width: 250px;
+    height: 140px;
+    border: 1px solid #808080;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    margin-left: 108px;
+    background: #fff;
+    padding: 4px;
+    resize: vertical;
+}
+
+.financed-row {
+    display: flex;
+    align-items: flex-start; /* checkbox aligns with top of textarea */
+    gap: 8px;
+}
+
+.textarea-large-right {
+    width: 250px;
+    height: 150px;
+    border: 1px solid #808080;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    background: #fff;
+    padding: 4px;
+    resize: vertical;
+}
+
+/* Salesperson row sizing */
+.input-code { width: 90px; }
+.input-desc { width: 180px; }
+
+/* Windows 95 style checkbox */
+.win95-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid;
+    border-color: #808080 #fff #fff #808080;
+    background-color: white;
+    position: relative;
+    margin-left:
+}
+
+.win95-checkbox:checked {
+    background-color: #d4d0c8;
+}
+
+.win95-checkbox:checked::after {
+    content: "✓";
+    position: absolute;
+    left: 3px;
+    top: -1px;
+    font-size: 12px;
+}
+
+.win95-checkbox:focus {
+    outline: 1px dotted #000080;
+}
+
+/* Corner summary row */
+.summary-row {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.total-status {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 8px;
+}
+
+.total-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.right-align { text-align: right; }
+
+/* Status group box (Win95-style) */
+.status-frame {
+  position: relative;
+  padding: 10px 8px 8px; /* leave space for caption */
+  width: 220px;
+  background: #d4d0c8;
+  border: 1px solid; 
+  border-color: #808080 #fff #fff #808080; /* sunken */
+}
+.status-title {
+  position: absolute;
+  top: -8px; /* sit on the border */
+  left: 8px;
+  padding: 0 4px;
+  font-size: 11px;
+  background: #d4d0c8; /* mask the border under text */
+}
+.status-body {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Dates block */
+.dates-block { display: grid; grid-template-rows: auto auto; gap: 6px; }
+.customer-log { text-align: left; }
+.dates-grid { display: grid; grid-template-columns: auto 90px; gap: 4px 8px; align-items: center; }
+.date-field { width: 90px; }
+
+.bottom-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 8px 10px 12px;
+}
+
+.win95-btn {
+  min-width: 72px;
+  padding: 4px 10px;
+  background: #d4d0c8;
+  border: 1px solid;
+  border-color: #fff #404040 #404040 #fff; /* raised */
+  cursor: pointer;
+}
+
+.win95-btn:active {
+  border-color: #404040 #fff #fff #404040; /* pressed */
+}
+
+/* Tab visibility */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+

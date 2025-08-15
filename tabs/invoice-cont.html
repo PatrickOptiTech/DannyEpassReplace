@@ -1,0 +1,123 @@
+<div class="invoice-cont-container">
+  <!-- Table 1 Section -->
+  <div class="table-section">
+    <div class="table-header">
+      <label>Table1</label>
+      <div class="table-actions">
+        <input type="text" class="input-medium">
+        <input type="text" class="input-desc" readonly>
+        <button class="win95-btn">Delete</button>
+      </div>
+    </div>
+    <table class="win95-table">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+          <th>UserCreated</th>
+          <th>DateCreated</th>
+          <th>TimeCreated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="empty-row">
+          <td colspan="5"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Table 2 Section -->
+  <div class="table-section">
+    <div class="table-header">
+      <label>Table2</label>
+      <div class="table-actions">
+        <input type="text" class="input-medium">
+        <input type="text" class="input-desc" readonly>
+        <button class="win95-btn">Delete</button>
+      </div>
+    </div>
+    <table class="win95-table">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+          <th>User Cre...</th>
+          <th>DateCreated</th>
+          <th>TimeCreated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="empty-row">
+          <td colspan="5"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Shipping Methods Section -->
+  <div class="shipping-section">
+    <div class="shipping-row">
+      <label>Ship Method</label>
+      <select class="dropdown-medium">
+        <option>Complete Ship</option>
+      </select>
+      <label>Carrier</label>
+      <input type="text" class="input-medium">
+      <input type="text" class="input-desc" readonly>
+    </div>
+    <div class="shipping-row">
+      <label>Print Method</label>
+      <select class="dropdown-medium">
+        <option>Invoice</option>
+      </select>
+      <label>Ship Via</label>
+      <input type="text" class="input-long">
+    </div>
+  </div>
+
+  <!-- Tax Section -->
+  <div class="tax-section">
+    <div class="tax-header">Taxes</div>
+    <div class="tax-grid">
+      <div class="tax-row">
+        <label>Branch</label>
+        <input type="text" class="input-short" value="Default">
+        <input type="text" class="input-desc" value="Danny's Appliance - PLAY" readonly>
+        <label class="tax-exempt-label">Tax Exempt 1</label>
+        <input type="text" class="input-medium">
+      </div>
+      <div class="tax-row">
+        <label>Tax 2</label>
+        <input type="text" class="input-short" value="RI">
+        <input type="text" class="input-desc" value="RHODE ISLAND" readonly>
+        <label class="tax-exempt-label">Tax Exempt RI</label>
+        <input type="text" class="input-medium">
+      </div>
+      <div class="tax-row">
+        <input type="text" class="input-short percent-input" value="7.0000">
+        <span class="percent-symbol">%</span>
+        <label>TTR Jurisdiction Code</label>
+        <input type="text" class="input-medium">
+        <label class="tax-exempt-label">Tax Exempt</label>
+        <input type="text" class="input-medium">
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Side Checkboxes -->
+  <div class="right-checkboxes">
+    <div class="checkbox-row">
+      <input type="checkbox" id="in-fulfillment" class="win95-checkbox">
+      <label for="in-fulfillment">In Fulfillment</label>
+    </div>
+    <div class="checkbox-row">
+      <input type="checkbox" id="void" class="win95-checkbox">
+      <label for="void">Void</label>
+    </div>
+    <div class="checkbox-row">
+      <input type="checkbox" id="delivery-overridden" class="win95-checkbox" disabled>
+      <label for="delivery-overridden" class="disabled">Delivery Overridden</label>
+    </div>
+  </div>
+</div>

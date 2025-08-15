@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EPASS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="window">
+        <div class="menu-bar">
+            <ul>
+                <li><a>File</a></li>
+                <li><a>Invoicing</a></li>
+                <li><a>Purchasing</a></li>
+                <li><a>Item Inventory</a></li>
+                <li><a>Serial Inventory</a></li>
+                <li><a>Customer</a></li>
+                <li><a>GL</a></li>
+                <li><a>AR</a></li>
+                <li><a>AP</a></li>
+                <li><a>Tools</a></li>
+                <li><a>Window</a></li>
+                <li><a>Help</a></li>
+            </ul>
+        </div>
+        <div class="toolbar">
+            <div class="split-button">
+            <button id="add-invoice-emoji" class="header-icon" aria-label="Note">
+                📝 <span class="hover-text">Create New Invoice</span>
+            </button>
+              <button class="header-icon dropdown-toggle" aria-label="More options">
+                ▼
+              </button>
+              <div class="dropdown-menu">
+                <a href="#">Create Invoice</a>
+                <a href="#">Create PO</a>
+                <a href="#">Create Item</a>
+                <a href="#">Create Model</a>
+                <a href="#">Create Customer</a>
+              </div>
+            </div>
+            <button class="header-icon" aria-label="Note">
+                📄 <span class="hover-text">Finish Invoice</span>
+            </button>
+            <button class="header-icon" aria-label="Note">
+                🖨️ <span class="hover-text">Print Invoice</span>
+            </button>
+            <button class="header-icon" aria-label="Note">
+                ✉️ <span class="hover-text">Email Invoice</span>
+            </button>
+            <div class="separator"></div>
+            <button onclick="window.electron.openRouting()" class="header-icon" aria-label="Note">
+                ⛟ <span class="hover-text">Dispatching - Routing</span>
+            </button>
+            <button onclick="window.electron.openMapping()" class="header-icon" aria-label="Note">
+                🌍 <span class="hover-text">Dispatching - Mapping</span>
+            </button>
+            <button class="header-icon" aria-label="Note">
+                🛠 <span class="hover-text">Service Request</span>
+            </button>
+            <button class="header-icon" aria-label="Note">
+                🛒 <span class="hover-text">Web Order</span>
+            </button>
+            <div class="separator"></div>
+            <button class="header-icon" aria-label="Note">
+                𝐂 <span class="hover-text">Show Cost</span>
+            </button>
+            <button class="header-icon" aria-label="Note">
+                𝐋 <span class="hover-text">Show List</span>
+            </button>
+            <div class="separator"></div>
+            <button class="header-icon" aria-label="Note">
+                📋 <span class="hover-text">Dimension Express</span>
+            </button>
+            <button class="header-icon" aria-label="Note">
+                Ⓜ️ <span class="hover-text">My Parts Help</span>
+            </button>
+            <button class="header-icon" aria-label="Note">
+                〽️ <span class="hover-text">Marcone Parts Lookup</span>
+            </button>
+            <div class="separator"></div>
+            <button class="header-icon" aria-label="Note">
+                🔖 <span class="hover-text">Item Labels</span>
+            </button>
+            <button class="header-icon" aria-label="Note">
+                ⛆ <span class="hover-text">Serial Labels</span>
+            </button>
+            <button class="header-icon" aria-label="Note">
+                🏷️ <span class="hover-text">Price Tag</span>
+            </button>
+            <div class="separator"></div>
+            <button class="header-icon" aria-label="Note">
+                🕹️ <span class="hover-text">Wireless Inventory Activity</span>
+            </button>
+            <button class="header-icon" aria-label="Note">
+                ၊၊||၊ <span class="hover-text">Wireless - Print Labels by PO</span>
+            </button>
+            <div class="separator"></div>
+            <button class="header-icon" aria-label="Note">
+                📬 <span class="hover-text">Messaging System</span>
+            </button>
+            <button class="header-icon" aria-label="Note">
+                📄 <span class="hover-text">Create New Message</span>
+            </button>
+            <button class="header-icon" aria-label="Note">
+                📒 <span class="hover-text">Create New Reminder</span>
+            </button>
+            <div class="split-button">
+                <button class="header-icon" aria-label="Note">
+                    💬 <span class="hover-text">Create New Invoice</span>
+                </button>
+                <button class="header-icon dropdown-toggle" aria-label="More options">
+                  ▼
+                </button>
+                <div class="dropdown-menu">
+                  <a href="#">New Text</a>
+                </div>
+              </div>
+            <div class="separator"></div>
+            <button class="header-icon" aria-label="Note">
+                📦 <span class="hover-text">Request Transfer</span>
+            </button>
+            <div class="separator"></div>
+            <button class="header-icon" aria-label="Note">
+                📅 <span class="hover-text">Price Inquiry</span>
+            </button>
+            <div class="separator"></div>
+            <button class="header-icon" aria-label="Note">
+                📊 <span class="hover-text">Manager's Dashboard</span>
+            </button>
+            <div class="separator"></div>
+            <button class="header-icon" onclick="window.electron.openSalesQueue()" aria-label="Note">
+                👥 <span class="hover-text">Sales Queue</span>
+            </button>
+            <button class="header-icon" aria-label="Note">
+                📓 <span class="hover-text">Consolidated Notes</span>
+            </button>
+            <button class="header-icon" aria-label="Note">
+                SCS <span class="hover-text">SCS UC</span>
+            </button>
+        </div>
+        <div class="main-content">
+            <div class="icon-grid">
+                <div class="icon-button">
+                    <div class="icon">🗂️</div>
+                    <span>Invoice Maintenance</span>
+                </div>
+                <div class="icon-button">
+                    <div class="icon">🚚</div>
+                    <span>Routing</span>
+                </div>
+                <div class="icon-button">
+                    <div class="icon">📄</div>
+                    <span>Add Invoice</span>
+                </div>
+                <div class="icon-button">
+                    <div class="icon">🗺️</div>
+                    <span>Mapping</span>
+                </div>
+                <div class="icon-button">
+                    <div class="icon">💵</div>
+                    <span>Quick Cash Sale</span>
+                </div>
+                <div class="icon-button">
+                    <div class="icon">🗃️</div>
+                    <span>Purchasing Maintenance</span>
+                </div>
+                <div class="icon-button" onclick="window.electron.openInvoicePosting()">
+                    <div class="icon">📋</div>
+                    <span>Invoice Posting</span>
+                </div>
+                <div class="icon-button">
+                    <div class="icon">📝</div>
+                    <span>Add PO</span>
+                </div>
+            </div>
+            <button class="customize-btn" id="btn-customize">Customize Home Screen</button>
+        </div>
+        <div class="status-bar">
+            <span>IP: 192.168.1.6</span>
+            <span id="status-user">User: Loading...</span>
+            <span>Branch: Default</span>
+            <span>Terminal: Default</span>
+            <span>Report Date: August 12, 2025</span>
+        </div>
+    </div>
+
+    <script>
+        // Update user info in status bar
+        function updateUserDisplay() {
+            const currentUser = window.electron.getCurrentUser();
+            if (currentUser) {
+                const userDisplay = currentUser.displayName || currentUser.username;
+                document.getElementById('status-user').textContent = `User: ${userDisplay}`;
+                console.log('Updated user display:', userDisplay);
+            } else {
+                console.log('No user info available');
+            }
+        }
+
+        // Update when page loads
+        document.addEventListener('DOMContentLoaded', updateUserDisplay);
+
+        // Listen for user updates
+        window.electron.onUserUpdated && window.electron.onUserUpdated(updateUserDisplay);
+
+        document.addEventListener('click', function(event) {
+            const isDropdownButton = event.target.matches('.dropdown-toggle');
+            
+            // Close all dropdowns
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                if (!menu.parentElement.contains(event.target)) {
+                    menu.classList.remove('show');
+                }
+            });
+
+            // Toggle the clicked dropdown
+            if (isDropdownButton) {
+                const menu = event.target.nextElementSibling;
+                menu.classList.toggle('show');
+            }
+        });
+
+        document.getElementById('add-invoice-emoji').addEventListener('click', () => {
+            window.electron.openAddInvoiceWindow();
+        });
+
+        document.getElementById('btn-customize').addEventListener('click', () => {
+            window.electron.openCustomizeHomeWindow();
+        });
+
+        // Dynamic main menu rendering from saved shortcuts (localStorage stub)
+        const DEFAULT = [
+          { emoji:'🗂️', label:'Invoice Maintenance' },
+          { emoji:'🚚', label:'Routing' },
+          { emoji:'📄', label:'Add Invoice' },
+          { emoji:'🗺️', label:'Mapping' },
+          { emoji:'💵', label:'Quick Cash Sale' },
+          { emoji:'🗃️', label:'Purchasing Maintenance' },
+          { emoji:'🗄️', label:'Invoice Posting' },
+          { emoji:'📝', label:'Add PO' },
+        ];
+
+        function getSaved() {
+          try { return JSON.parse(localStorage.getItem('home-shortcuts') || '{}'); } catch { return {}; }
+        }
+
+        function mapSlugToEmojiLabel(slug) {
+          const map = {
+            invoice_maintenance: ['🗂️','Invoice Maintenance'],
+            invoice_posting: ['📋','Invoice Posting'],
+            add_invoice: ['📄','Add Invoice'],
+            quick_cash_sale: ['💵','Quick Cash Sale'],
+            invoice_posting: ['🗄️','Invoice Posting'],
+            service_requests: ['🛠','Service Requests'],
+            routing: ['🚚','Routing'],
+            mapping: ['🗺️','Mapping'],
+            purchasing_maintenance: ['🗃️','Purchasing Maintenance'],
+            add_po: ['📝','Add PO'],
+            supplier_maintenance: ['🏭','Supplier Maintenance'],
+            item_maintenance: ['📦','Item Maintenance'],
+            print_item_lables: ['🔖','Print Item Labels'],
+            serial_mainenance: ['⛆','Serial Maintenance'],
+            print_price_tags: ['🏷️','Print Price Tags'],
+            print_serial_labels: ['⛆','Print Serial Labels'],
+            print_serial_labels_by_po: ['⛆','Print Serial Labels by PO'],
+            customer_maintenance: ['👥','Customer Maintenance'],
+            customer_history: ['📓','Customer History'],
+            ar_transactions: ['📒','A/R Transactions'],
+            ar_payment: ['💳','A/R Payment'],
+            ar_posting: ['📤','A/R Posting'],
+            ar_customer_balance: ['💼','A/R Customer Balance'],
+            ap_transaction: ['📒','A/P Transaction'],
+            ap_posting: ['📤','A/P Posting'],
+            ap_supplier_history: ['🏭','A/P Supplier History'],
+            mailbox: ['📬','Mailbox'],
+            text_messages: ['💬','Text Messages'],
+            system_maintenance: ['🧩','System Maintenance'],
+            managers_dashboard: ['📊',"Manager's Dashboard"],
+            call_count_calendar: ['📅','Call Count Calendar']
+          };
+          return map[slug] || ['📦','Shortcut'];
+        }
+
+        function routeAction(slug) {
+          switch (slug) {
+            case 'add_invoice':
+              window.electron.openAddInvoiceWindow();
+              break;
+            case 'invoice_maintenance':
+              window.electron.openInvoiceMaintenance();
+              break;
+            case 'invoice_posting':
+              window.electron.openInvoicePosting();
+              break;
+            case 'routing':
+              window.electron.openRouting();
+              break;
+            case 'add_po':
+              window.electron.openAddPo();
+              break;
+            case 'purchasing_maintenance':
+              window.electron.openPurchasingMaintenance();
+              break;
+            case 'mapping':
+              window.electron.openMapping();
+              break;
+            // TODO: wire the rest to their respective popups/screens
+            default:
+              console.log('Action clicked:', slug);
+          }
+        }
+
+        function applyShortcuts() {
+          const saved = getSaved();
+          const grid = document.querySelector('.icon-grid');
+          const nodes = [...grid.querySelectorAll('.icon-button')].slice(0,8);
+          nodes.forEach((node, i) => {
+            const key = `btn${i+1}`;
+            const slug = saved[key];
+            let emoji,label;
+            if (slug) [emoji,label] = mapSlugToEmojiLabel(slug);
+            else { emoji = DEFAULT[i]?.emoji || '📦'; label = DEFAULT[i]?.label || 'Shortcut'; }
+            const icon = node.querySelector('.icon');
+            const span = node.querySelector('span');
+            if (icon) icon.textContent = emoji;
+            if (span) span.textContent = label;
+            // Rebind click handler per-tile based on slug
+            node.onclick = () => {
+              if (slug) routeAction(slug);
+            };
+          });
+        }
+
+        applyShortcuts();
+        window.addEventListener('focus', applyShortcuts);
+    </script>
+</body>
+</html>

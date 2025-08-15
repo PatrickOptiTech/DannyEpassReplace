@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoicing</title>
+    <link rel="stylesheet" href="invoice-maintenance.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <span>Invoicing</span>
+            <div class="window-controls">
+                <button class="control-btn minimize">-</button>
+                <button class="control-btn maximize">□</button>
+                <button class="control-btn close">×</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Search Options Section -->
+            <div class="search-options">
+                <div class="search-header">
+                    <label>Search Options</label>
+                    <a href="#" class="default-search">Click here to make this your default Search</a>
+                </div>
+
+                <!-- Search Criteria -->
+                <div class="search-rows">
+                    <div class="search-row">
+                        <label>Search For</label>
+                        <input type="text" class="input-long">
+                        <label>By</label>
+                        <select class="dropdown-medium">
+                            <option>Invoice #</option>
+                        </select>
+                        <label>Matching</label>
+                        <select class="dropdown-small">
+                            <option>Equal</option>
+                        </select>
+                    </div>
+
+                    <div class="search-row">
+                        <select class="dropdown-small">
+                            <option>AND</option>
+                            <option>OR</option>
+                        </select>
+                        <label>For</label>
+                        <input type="text" class="input-long">
+                        <label>By</label>
+                        <select class="dropdown-medium">
+                            <option>Customer #</option>
+                        </select>
+                        <label>Matching</label>
+                        <select class="dropdown-small">
+                            <option>Equal</option>
+                        </select>
+                        <label>Status</label>
+                        <select class="dropdown-small">
+                            <option>All</option>
+                        </select>
+                    </div>
+
+                    <div class="search-row">
+                        <select class="dropdown-small">
+                            <option>AND</option>
+                            <option>OR</option>
+                        </select>
+                        <label>There is a</label>
+                        <select class="dropdown-medium">
+                            <option>Model Code</option>
+                        </select>
+                        <label>Of</label>
+                        <input type="text" class="input-medium">
+                        <label>Matching</label>
+                        <select class="dropdown-small">
+                            <option>Equal</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Include Options -->
+            <div class="include-options">
+                <div class="include-quote">
+                    <label>Include Quote</label>
+                    <select class="dropdown-small">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                    <button class="calendar-btn">📅</button>
+                </div>
+            </div>
+
+            <!-- Main Grid Section -->
+            <div class="grid-section">
+                <div class="tree-view">
+                    <label>Include Search in Tree</label>
+                    <div class="tree-items">
+                        <div class="tree-item">
+                            <span class="expand-icon">+</span>
+                            <span>Status</span>
+                        </div>
+                        <div class="tree-item">
+                            <span class="expand-icon">+</span>
+                            <span>Invoice Type</span>
+                        </div>
+                        <div class="tree-item">
+                            <span class="expand-icon">+</span>
+                            <span>Salesperson</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-grid">
+                    <table class="grid-table">
+                        <thead>
+                            <tr>
+                                <th>Invoice #</th>
+                                <th>Customer #</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Finish Date</th>
+                                <th>Status</th>
+                                <th>Inv Type</th>
+                                <th>SP</th>
+                                <th>Total</th>
+                                <th>Job Status</th>
+                                <th>Map Zone</th>
+                                <th>PO #</th>
+                                <th>Reference</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="empty-row">
+                                <td colspan="13"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="bottom-section">
+                <div class="record-count">
+                    <label>Record Count</label>
+                    <input type="text" class="input-short" readonly>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="win95-btn">Print</button>
+                    <button class="win95-btn">Detail</button>
+                    <button class="win95-btn">Review</button>
+                    <button class="win95-btn film-strip">Add</button>
+                    <button class="win95-btn">Edit</button>
+                    <button class="win95-btn">Multi Edit</button>
+                    <button class="win95-btn">Multi Edit Fields</button>
+                    <button class="win95-btn">Delete</button>
+                    <button class="win95-btn">Excel</button>
+                    <button class="win95-btn">Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Handle window control buttons
+        document.querySelector('.control-btn.close').addEventListener('click', () => {
+            window.close();
+        });
+
+        // Handle tree view expansion
+        document.querySelectorAll('.expand-icon').forEach(icon => {
+            icon.addEventListener('click', () => {
+                icon.textContent = icon.textContent === '+' ? '-' : '+';
+            });
+        });
+    </script>
+</body>
+</html>

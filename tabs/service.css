@@ -1,0 +1,108 @@
+.service-container {
+  display: flex;
+  padding: 8px;
+  gap: 20px;
+}
+
+.service-left {
+  flex: 1;
+  min-width: 400px;
+}
+
+.service-right {
+  width: 300px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  gap: 4px;
+}
+
+.form-row label {
+  width: 85px;
+  text-align: left;
+}
+
+.input-short {
+  width: 80px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+.input-desc {
+  flex: 1;
+  height: 20px;
+  border: 1px solid #808080;
+  background: #f0f0f0;
+}
+
+.input-long {
+  width: 200px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+.lbl-PickUp {
+  width: 80px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: #f0f0f0;
+  text-align: center;
+}
+
+.mph-diagnostics {
+  margin-left: 4px;
+  padding: 1px 8px;
+  height: 20px;
+  background: #d4d0c8;
+  border: 1px solid #808080;
+  border-radius: 0;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.complaint-notes,
+.service-performed-notes {
+  display: flex;
+  margin: 0 0 12px 89px;
+  gap: 4px;
+}
+
+.complaint-textarea,
+.service-textarea {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #808080;
+  resize: none;
+  background: white;
+}
+
+.scroll-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.scroll-buttons button {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d4d0c8;
+  border: 1px solid #808080;
+  border-radius: 0;
+  font-size: 8px;
+  cursor: pointer;
+}
+
+/* Win95-style button states */
+button:active {
+  border-color: #404040 #ffffff #ffffff #404040;
+  background: #c0c0c0;
+}

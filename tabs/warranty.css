@@ -1,0 +1,195 @@
+.warranty-container {
+  display: flex;
+  padding: 8px;
+  gap: 16px;
+  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-size: 11px;
+}
+
+/* Left Side */
+.warranty-left {
+  width: 380px;
+}
+
+.repair-codes-section {
+  border: 1px solid #808080;
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  margin-bottom: 8px;
+}
+
+.repair-codes {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.repair-code-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.repair-code-row label {
+  width: 15px;
+}
+
+.service-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.form-row label {
+  width: 100px;
+  text-align: left;
+}
+
+.indent-label {
+  padding-left: 20px;
+}
+
+/* Center Section */
+.warranty-center {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.time-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.time-header {
+  display: flex;
+  margin-bottom: 4px;
+}
+
+.spacer {
+  width: 100px;
+}
+
+.time-column {
+  width: 50px;
+  text-align: center;
+}
+
+.cost-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Right Side */
+.warranty-right {
+  width: 280px;
+}
+
+.checkbox-section {
+  margin-bottom: 16px;
+}
+
+.dropdowns-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.extra-warranty-section {
+  border: 1px solid #808080;
+  padding: 8px;
+}
+
+.warranty-data-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.warranty-data-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.warranty-data-row label {
+  width: 15px;
+}
+
+/* Input Styles */
+.input-short {
+  width: 80px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+.input-desc {
+  flex: 1;
+  height: 20px;
+  border: 1px solid #808080;
+  background: #f0f0f0;
+}
+
+.input-long {
+  width: 200px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+.input-date {
+  width: 80px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+  text-align: center;
+}
+
+.time-input {
+  width: 50px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+.number-input {
+  width: 80px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.dropdown-medium {
+  width: 150px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+/* Checkbox Styles */
+.win95-checkbox {
+  margin: 0;
+}
+
+/* Windows 95 Input Focus */
+input:focus, select:focus {
+  outline: none;
+}

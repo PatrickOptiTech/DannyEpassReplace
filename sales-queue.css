@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+    font-family: "MS Sans Serif", Arial, sans-serif;
+    font-size: 11px;
+    background: #d4d0c8;
+    overflow: hidden;
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #d4d0c8;
+}
+
+/* Title Bar */
+.title-bar {
+    background: #000080;
+    color: white;
+    padding: 2px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.control-btn {
+    width: 16px;
+    height: 14px;
+    border: 1px solid white;
+    background: #d4d0c8;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* Content Area */
+.content {
+    flex: 1;
+    padding: 8px;
+    overflow: auto;
+    background: white;
+    border: 1px solid #808080;
+    margin: 2px;
+}
+
+/* Grid Table */
+.grid-table {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #d4d0c8;
+    border: 1px solid #808080;
+    padding: 4px 8px;
+    text-align: left;
+    font-weight: normal;
+    position: sticky;
+    top: 0;
+}
+
+td {
+    border: 1px solid #c0c0c0;
+    padding: 4px 8px;
+    background: white;
+}
+
+tr:hover td {
+    background: #0000ff;
+    color: white;
+}
+
+tr.selected td {
+    background: #000080;
+    color: white;
+}
+
+/* Modal Form */
+.modal-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #d4d0c8;
+    border: 1px solid #808080;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    min-width: 400px;
+}
+
+.form-title-bar {
+    background: #000080;
+    color: white;
+    padding: 2px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-close {
+    width: 16px;
+    height: 14px;
+    border: 1px solid white;
+    background: #d4d0c8;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.form-content {
+    padding: 16px;
+}
+
+.form-row {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.form-row label {
+    width: 80px;
+}
+
+.form-row input {
+    flex: 1;
+    border: 1px solid #808080;
+    background: white;
+    height: 20px;
+    padding: 1px 4px;
+}
+
+.form-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+/* Button Bar */
+.button-bar {
+    display: flex;
+    gap: 4px;
+    padding: 8px;
+    background: #d4d0c8;
+    border-top: 1px solid #808080;
+}
+
+/* Windows 95 Button Style */
+.win95-btn {
+    padding: 4px 8px;
+    min-width: 75px;
+    height: 23px;
+    background: #d4d0c8;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    font-size: 11px;
+    font-family: "MS Sans Serif", Arial, sans-serif;
+    text-align: center;
+    cursor: pointer;
+}
+
+.win95-btn:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: #c0c0c0;
+}

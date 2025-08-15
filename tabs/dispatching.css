@@ -1,0 +1,240 @@
+.dispatching-container {
+  padding: 8px;
+  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-size: 11px;
+}
+
+/* All Calls Table */
+.all-calls-section {
+  border: 1px solid #808080;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  padding: 2px 4px;
+  background: #d4d0c8;
+  border-bottom: 1px solid #808080;
+}
+
+.all-calls-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.all-calls-table th {
+  text-align: left;
+  padding: 2px 4px;
+  border-right: 1px solid #808080;
+  font-weight: normal;
+}
+
+.empty-row {
+  height: 20px;
+}
+
+/* Action Buttons Section */
+.action-buttons {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.win95-btn {
+  padding: 3px 8px;
+  background: #d4d0c8;
+  border: 1px solid #808080;
+  border-radius: 0;
+  font-size: 11px;
+  min-width: 60px;
+  height: 23px;
+  text-align: center;
+}
+
+.win95-btn:active {
+  border-color: #404040 #ffffff #ffffff #404040;
+  background: #c0c0c0;
+}
+
+.primary-call-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 20px;
+}
+
+.driving-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 20px;
+}
+
+.car-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.driving-text {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+.address-status {
+  color: #ff0000;
+}
+
+/* Main Form */
+.dispatch-form {
+  display: flex;
+  gap: 20px;
+}
+
+.form-left {
+  flex: 1;
+}
+
+.form-right {
+  width: 350px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  gap: 4px;
+}
+
+.form-row label {
+  width: 85px;
+  text-align: left;
+}
+
+.input-short {
+  width: 80px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+.input-desc {
+  flex: 1;
+  height: 20px;
+  border: 1px solid #808080;
+  background: #f0f0f0;
+}
+
+.input-long {
+  width: 200px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+.input-date {
+  width: 80px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: #f0f0f0;
+  text-align: center;
+}
+
+.input-number {
+  width: 40px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+  text-align: right;
+}
+
+.dropdown-medium {
+  width: 150px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+/* Lists Section */
+.lists-section {
+  display: flex;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.list-box {
+  flex: 1;
+  border: 1px solid #808080;
+  padding: 4px;
+}
+
+.list-header {
+  margin-bottom: 4px;
+}
+
+.list-content {
+  height: 100px;
+  border: 1px solid #808080;
+  background: white;
+  margin-bottom: 4px;
+}
+
+.list-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+/* Time Input Groups */
+.time-input {
+  display: flex;
+  align-items: center;
+}
+
+.time-field {
+  width: 60px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+  text-align: center;
+}
+
+.dropdown-btn {
+  width: 16px;
+  height: 20px;
+  padding: 0;
+  background: #d4d0c8;
+  border: 1px solid #808080;
+  font-size: 8px;
+}
+
+.time-section {
+  margin: 8px 0;
+}
+
+/* Special Request */
+.special-request {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #808080;
+  resize: none;
+  background: white;
+}
+
+/* Side Buttons */
+.side-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: absolute;
+  right: 16px;
+  bottom: 50px;
+}
+
+/* Checkboxes */
+.win95-checkbox {
+  margin-right: 4px;
+}
+
+/* Windows 95 Input Focus */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+}

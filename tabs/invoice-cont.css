@@ -1,0 +1,198 @@
+.invoice-cont-container {
+  padding: 8px;
+  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-size: 11px;
+  position: relative;
+}
+
+/* Table Sections */
+.table-section {
+  margin-bottom: 16px;
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.win95-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #808080;
+}
+
+.win95-table th {
+  background: #d4d0c8;
+  border: 1px solid #808080;
+  padding: 2px 4px;
+  text-align: left;
+  font-weight: normal;
+}
+
+.win95-table td {
+  border: 1px solid #808080;
+  padding: 2px 4px;
+}
+
+.empty-row {
+  height: 60px;
+}
+
+/* Shipping Section */
+.shipping-section {
+  border: 1px solid #808080;
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.shipping-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.shipping-row:last-child {
+  margin-bottom: 0;
+}
+
+.shipping-row label {
+  width: 85px;
+}
+
+/* Tax Section */
+.tax-section {
+  border: 1px solid #808080;
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.tax-header {
+  margin-bottom: 8px;
+}
+
+.tax-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tax-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tax-row label {
+  width: 85px;
+}
+
+.tax-exempt-label {
+  margin-left: 20px;
+}
+
+.percent-input {
+  text-align: right;
+}
+
+.percent-symbol {
+  margin: 0 4px;
+}
+
+/* Right Side Checkboxes */
+.right-checkboxes {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Input Styles */
+.input-short {
+  width: 80px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+.input-medium {
+  width: 120px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+.input-long {
+  width: 300px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+.input-desc {
+  flex: 1;
+  height: 20px;
+  border: 1px solid #808080;
+  background: #f0f0f0;
+}
+
+.dropdown-medium {
+  width: 150px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: white;
+}
+
+/* Button Styles */
+.win95-btn {
+  padding: 3px 8px;
+  background: #d4d0c8;
+  border: 1px solid #808080;
+  border-radius: 0;
+  font-size: 11px;
+  min-width: 60px;
+  height: 23px;
+  text-align: center;
+}
+
+.win95-btn:active {
+  border-color: #404040 #ffffff #ffffff #404040;
+  background: #c0c0c0;
+}
+
+/* Checkbox Styles */
+.win95-checkbox {
+  margin: 0;
+}
+
+/* Disabled Styles */
+.disabled {
+  color: #808080;
+}
+
+input[disabled] {
+  background: #d4d0c8;
+  color: #808080;
+}
+
+/* Windows 95 Input Focus */
+input:focus, select:focus {
+  outline: none;
+}

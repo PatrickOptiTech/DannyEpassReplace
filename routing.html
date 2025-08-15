@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Routing - SERVICE Department</title>
+    <link rel="stylesheet" href="routing.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <span>Routing - SERVICE Department</span>
+            <div class="window-controls">
+                <button class="control-btn minimize">-</button>
+                <button class="control-btn maximize">□</button>
+                <button class="control-btn close">×</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Top Section -->
+            <div class="top-section">
+                <div class="date-filter">
+                    <label>Date:</label>
+                    <input type="text" class="date-input" value="08/12/2025">
+                    <button class="calendar-btn">📅</button>
+                </div>
+                <div class="department-filter">
+                    <label>Department:</label>
+                    <select>
+                        <option>SERVICE</option>
+                        <option>DELIVERY</option>
+                        <option>INSTALLATION</option>
+                    </select>
+                </div>
+                <div class="tech-filter">
+                    <label>Tech:</label>
+                    <select>
+                        <option>All Techs</option>
+                    </select>
+                </div>
+                <div class="status-filter">
+                    <label>Status:</label>
+                    <select>
+                        <option>All</option>
+                        <option>Pending</option>
+                        <option>In Progress</option>
+                        <option>Completed</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid-container">
+                <!-- Left Side: Technicians -->
+                <div class="tech-grid">
+                    <div class="tech-header">
+                        <div class="tech-name">Technician</div>
+                        <div class="tech-status">Status</div>
+                        <div class="tech-time">Time</div>
+                    </div>
+                    <div class="tech-list">
+                        <!-- Tech rows will be dynamically populated -->
+                        <div class="tech-row">
+                            <div class="tech-name">JOHN SMITH</div>
+                            <div class="tech-status">Available</div>
+                            <div class="tech-time">8:00 AM</div>
+                        </div>
+                        <div class="tech-row">
+                            <div class="tech-name">MIKE JONES</div>
+                            <div class="tech-status">On Call</div>
+                            <div class="tech-time">9:30 AM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Calls -->
+                <div class="calls-grid">
+                    <div class="calls-header">
+                        <div>Time</div>
+                        <div>Customer</div>
+                        <div>Address</div>
+                        <div>City</div>
+                        <div>Phone</div>
+                        <div>Type</div>
+                        <div>Status</div>
+                        <div>Tech</div>
+                    </div>
+                    <div class="calls-list">
+                        <!-- Call rows will be dynamically populated -->
+                        <div class="call-row">
+                            <div>8:00 AM</div>
+                            <div>SMITH, JOHN</div>
+                            <div>123 MAIN ST</div>
+                            <div>ANYTOWN</div>
+                            <div>555-1234</div>
+                            <div>SERVICE</div>
+                            <div>Pending</div>
+                            <div>-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="bottom-section">
+                <div class="action-buttons">
+                    <button class="win95-btn">Print</button>
+                    <button class="win95-btn">Add</button>
+                    <button class="win95-btn">Edit</button>
+                    <button class="win95-btn">Delete</button>
+                    <button class="win95-btn">Refresh</button>
+                    <button class="win95-btn">Map</button>
+                    <button class="win95-btn">Exit</button>
+                </div>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="color-box pending"></div>
+                        <span>Pending</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="color-box in-progress"></div>
+                        <span>In Progress</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="color-box completed"></div>
+                        <span>Completed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Handle window control buttons
+        document.querySelector('.control-btn.close').addEventListener('click', () => {
+            window.close();
+        });
+
+        // Handle calendar button
+        document.querySelector('.calendar-btn').addEventListener('click', () => {
+            // TODO: Implement calendar popup
+            console.log('Calendar clicked');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dispatching Map</title>
+    <link rel="stylesheet" href="mapping.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <span>Dispatching Map</span>
+            <div class="window-controls">
+                <button class="control-btn minimize">-</button>
+                <button class="control-btn maximize">□</button>
+                <button class="control-btn close">×</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Left Panel -->
+            <div class="left-panel">
+                <!-- Department Section -->
+                <div class="section">
+                    <label>Department</label>
+                    <select class="department-select">
+                        <option>SERVICE</option>
+                    </select>
+                </div>
+
+                <!-- Date Range Section -->
+                <div class="section date-range">
+                    <div class="date-field">
+                        <label>Date From</label>
+                        <input type="text" value="6/2/2025" class="date-input">
+                    </div>
+                    <div class="date-field">
+                        <label>Date To</label>
+                        <input type="text" value="8/15/2025" class="date-input">
+                    </div>
+                </div>
+
+                <!-- Zone Section -->
+                <div class="section">
+                    <label>Zone</label>
+                    <div class="zone-grid">
+                        <div class="grid-header">
+                            <div>Zone</div>
+                            <div>Taken</div>
+                            <div>Allowed</div>
+                        </div>
+                        <div class="zone-list">
+                            <div class="zone-item">
+                                <input type="checkbox" checked>
+                                <label>ALL</label>
+                            </div>
+                            <div class="zone-item">
+                                <input type="checkbox" checked>
+                                <label>CP</label>
+                            </div>
+                            <div class="zone-item">
+                                <input type="checkbox" checked>
+                                <label>EB</label>
+                            </div>
+                            <div class="zone-item">
+                                <input type="checkbox" checked>
+                                <label>EC</label>
+                            </div>
+                            <div class="zone-item">
+                                <input type="checkbox" checked>
+                                <label>LC</label>
+                            </div>
+                            <div class="zone-item">
+                                <input type="checkbox" checked>
+                                <label>LV</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route Section -->
+                <div class="section">
+                    <label>Route</label>
+                    <div class="route-list">
+                        <div class="route-item">
+                            <input type="checkbox" checked>
+                            <label>ALL</label>
+                        </div>
+                        <div class="route-item">
+                            <input type="checkbox" checked>
+                            <label>UNASSIGNED</label>
+                        </div>
+                        <div class="route-item">
+                            <input type="checkbox" checked>
+                            <label>CP</label>
+                        </div>
+                        <div class="route-item">
+                            <input type="checkbox" checked>
+                            <label>EB</label>
+                        </div>
+                        <div class="route-item">
+                            <input type="checkbox" checked>
+                            <label>EC</label>
+                        </div>
+                        <div class="route-item">
+                            <input type="checkbox" checked>
+                            <label>LC</label>
+                        </div>
+                        <div class="route-item">
+                            <input type="checkbox" checked>
+                            <label>LV</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Status Section -->
+                <div class="section">
+                    <label>Job Status</label>
+                    <div class="status-list">
+                        <div class="status-item">
+                            <input type="checkbox" checked>
+                            <label>ALL</label>
+                        </div>
+                        <div class="status-item">
+                            <input type="checkbox" checked>
+                            <label>BLESING</label>
+                        </div>
+                        <div class="status-item">
+                            <input type="checkbox" checked>
+                            <label>BOP</label>
+                        </div>
+                        <div class="status-item">
+                            <input type="checkbox" checked>
+                            <label>FINISHED</label>
+                        </div>
+                        <div class="status-item">
+                            <input type="checkbox" checked>
+                            <label>JOEQ</label>
+                        </div>
+                        <div class="status-item">
+                            <input type="checkbox" checked>
+                            <label>PCPU</label>
+                        </div>
+                        <div class="status-item">
+                            <input type="checkbox" checked>
+                            <label>PI</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Options Section -->
+                <div class="section">
+                    <label>Map Options</label>
+                    <div class="map-options">
+                        <label class="option-item">
+                            <input type="checkbox" checked>
+                            Route Lines
+                        </label>
+                        <label class="option-item">
+                            <input type="checkbox">
+                            Drive Time
+                        </label>
+                        <label class="option-item">
+                            <input type="checkbox">
+                            Overlay Zones
+                        </label>
+                        <label class="option-item">
+                            <input type="checkbox" checked>
+                            Legend
+                        </label>
+                        <label class="option-item">
+                            <input type="checkbox">
+                            Summary
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Search Results Section -->
+                <div class="section search-results">
+                    <div class="result-item">
+                        <label>Calls Found:</label>
+                        <span>0</span>
+                    </div>
+                    <div class="result-item">
+                        <label>Valid Routes:</label>
+                        <span>0</span>
+                    </div>
+                    <button class="win95-btn search-btn">Search</button>
+                </div>
+
+                <!-- Qualification Legend -->
+                <div class="section qualification-legend">
+                    <div class="legend-column">
+                        <div class="legend-item">
+                            <span class="legend-icon">⬤</span>
+                            <label>SEALD</label>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-icon">★</span>
+                            <label>2MAN</label>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-icon">✖</span>
+                            <label>LUISA</label>
+                        </div>
+                    </div>
+                    <div class="legend-column">
+                        <div class="legend-item">
+                            <span class="legend-icon">■</span>
+                            <label>EDDY</label>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-icon">✕</span>
+                            <label>LGSAM</label>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-icon">▲</span>
+                            <label>HEAPP</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Priority Legend -->
+                <div class="section priority-legend">
+                    <div class="priority-item">
+                        <div class="color-box none"></div>
+                        <label>NONE</label>
+                    </div>
+                    <div class="priority-item">
+                        <div class="color-box nocoo"></div>
+                        <label>NOCOO</label>
+                    </div>
+                    <div class="priority-item">
+                        <div class="color-box mvup"></div>
+                        <label>MVUP</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Container -->
+            <div class="map-container">
+                <div class="map-controls">
+                    <button class="map-btn">Map</button>
+                    <button class="map-btn">Satellite</button>
+                </div>
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Handle window control buttons
+        document.querySelector('.control-btn.close').addEventListener('click', () => {
+            window.close();
+        });
+
+        // Initialize Google Maps
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 41.8240, lng: -71.4128 }, // Providence, RI
+                zoom: 10,
+                mapTypeControl: false, // We'll use our own controls
+                fullscreenControl: true,
+                streetViewControl: true
+            });
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+</body>
+</html>

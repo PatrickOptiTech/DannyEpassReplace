@@ -1,0 +1,267 @@
+body {
+    margin: 0;
+    font-family: "MS Sans Serif", Arial, sans-serif;
+    font-size: 11px;
+    background: #d4d0c8;
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #d4d0c8;
+}
+
+/* Title Bar */
+.title-bar {
+    background: #000080;
+    color: white;
+    padding: 2px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.control-btn {
+    width: 16px;
+    height: 14px;
+    border: 1px solid white;
+    background: #d4d0c8;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* Content Area */
+.content {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+/* Search Options */
+.search-options {
+    border: 1px solid #808080;
+    padding: 8px;
+}
+
+.search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.default-search {
+    color: #0000ff;
+    text-decoration: underline;
+}
+
+.search-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.search-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Include Options */
+.include-options {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.include-quote {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Grid Section */
+.grid-section {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+    min-height: 0;
+}
+
+/* Tree View */
+.tree-view {
+    width: 200px;
+    border: 1px solid #808080;
+    padding: 4px;
+}
+
+.tree-items {
+    margin-top: 8px;
+}
+
+.tree-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 0;
+}
+
+.expand-icon {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #808080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    cursor: pointer;
+}
+
+/* Data Grid */
+.data-grid {
+    flex: 1;
+    border: 1px solid #808080;
+    overflow: auto;
+}
+
+.grid-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.grid-table th {
+    background: #d4d0c8;
+    border: 1px solid #808080;
+    padding: 2px 4px;
+    text-align: left;
+    font-weight: normal;
+    position: sticky;
+    top: 0;
+}
+
+.grid-table td {
+    border: 1px solid #808080;
+    padding: 2px 4px;
+}
+
+.empty-row {
+    height: 200px;
+}
+
+/* Bottom Section */
+.bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.record-count {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 4px;
+}
+
+/* Input Styles */
+.input-short {
+    width: 60px;
+    height: 20px;
+    border: 1px solid #808080;
+    background: white;
+}
+
+.input-medium {
+    width: 120px;
+    height: 20px;
+    border: 1px solid #808080;
+    background: white;
+}
+
+.input-long {
+    width: 200px;
+    height: 20px;
+    border: 1px solid #808080;
+    background: white;
+}
+
+.dropdown-small {
+    width: 80px;
+    height: 20px;
+    border: 1px solid #808080;
+    background: white;
+}
+
+.dropdown-medium {
+    width: 120px;
+    height: 20px;
+    border: 1px solid #808080;
+    background: white;
+}
+
+/* Button Styles */
+.win95-btn {
+    padding: 4px 8px;
+    min-width: 60px;
+    height: 23px;
+    background: #d4d0c8;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    font-size: 11px;
+    text-align: center;
+}
+
+.win95-btn:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: #c0c0c0;
+}
+
+.calendar-btn {
+    width: 23px;
+    height: 23px;
+    padding: 0;
+    background: #d4d0c8;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Film Strip Button */
+.film-strip {
+    position: relative;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: linear-gradient(45deg, #d4d0c8 25%, transparent 25%),
+                linear-gradient(-45deg, #d4d0c8 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #d4d0c8 75%),
+                linear-gradient(-45deg, transparent 75%, #d4d0c8 75%);
+    background-size: 4px 4px;
+    background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+}
+
+/* Windows 95 Input Focus */
+input:focus, select:focus, button:focus {
+    outline: none;
+}

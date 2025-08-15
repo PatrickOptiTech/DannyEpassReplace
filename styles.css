@@ -1,0 +1,210 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #d4d0c8;
+}
+
+.menu-bar {
+    background-color: #ece9d8;
+    padding: 2px 4px;
+    border-bottom: 1px solid #aca899;
+}
+
+.menu-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu-bar ul li a {
+    padding: 4px 8px;
+    cursor: default;
+    font-size: 12px;
+}
+
+.toolbar {
+    padding: 2px;
+    border-bottom: 1px solid #aca899;
+    height: 28px;
+    background-color: #ece9d8;
+    display: flex;
+    align-items: center;
+}
+
+.toolbar-icon, .toolbar-icon-text {
+    height: 22px;
+    margin: 0 2px;
+    border: 1px solid transparent;
+}
+
+.toolbar-icon:hover, .toolbar-icon-text:hover {
+    border: 1px solid #335dff;
+    background-color: #e5f3ff;
+}
+
+.separator {
+    height: 100%;
+    border-left: 1px solid #aca899;
+    margin: 0 4px;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #808080;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #7f9db9;
+}
+
+.icon-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    width: 150px;
+    height: 100px;
+    text-align: center;
+}
+
+.icon-button:hover {
+    border-color: #335dff;
+    background-color: #e5f3ff;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+}
+
+.header-icon {
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    cursor: pointer;
+    position: relative;
+    /* Add transition for smooth effect */
+    transition: all 0.2s ease;
+}
+
+.header-icon:hover {
+    outline: 2px solid #EDDD6B; /* Yellow border */
+    border-radius: 4px;         /* Optional: rounded corners */
+    background-color: rgba(237, 221, 107, 0.2); /* Light yellow fill */
+}
+
+.split-button {
+    position: relative;
+    display: inline-flex;
+}
+
+.dropdown-toggle {
+    width: 16px;
+    font-size: 8px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.header-icon .hover-text {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 0.9em;
+    background-color: #EDDD6B;
+    padding: 2px 5px;
+    border: 1px solid #333;
+    white-space: nowrap;
+    z-index: 10;
+}
+  
+  .header-icon:hover .hover-text {
+    display: inline;
+  }
+
+  
+.icon-placeholder {
+    width: 48px;
+    height: 48px;
+    background-color: #ccc;
+    margin-bottom: 5px;
+}
+
+.icon-button span {
+    font-size: 12px;
+}
+
+.customize-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: #f0f0f0;
+    border: 1px solid #7f9db9;
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 10px;
+    background-color: #ece9d8;
+    border-top: 1px solid #aca899;
+    font-size: 11px;
+}

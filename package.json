@@ -19,16 +19,10 @@
     "appId": "com.epass.desktop",
     "productName": "EPASS Desktop",
     "files": [
-      "main.js",
-      "index.html",
-      "styles.css",
-      "preload.js",
-      "add-invoice.html",
-      "add-invoice.css",
-      "add-invoice-scripts/date-initializer.js",
-      "add-invoice-scripts/invoice-type-handler.js",
-      "add-invoice-scripts/date-picker.js",
-      "package.json"
+      "**/*",
+      "!node_modules/**/*",
+      "!src/**/*",
+      "!.git/**/*"
     ],
     "win": {
       "target": "nsis"
